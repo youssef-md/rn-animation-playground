@@ -1,9 +1,10 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Button } from "react-native";
+import { View } from "react-native";
 
 import Home from "../screens/Home";
 import { useGitHubLink } from "../hooks/githubLink";
+import RoundButton from "../components/RoundButton";
 
 const App = createStackNavigator();
 
@@ -14,10 +15,19 @@ const AppRoutes: React.FC = () => {
     <App.Navigator
       screenOptions={{
         headerRight: () => (
-          <Button onPress={() => alert(repoLink)} title="Github" />
+          <View
+            style={{
+              width: 110,
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <RoundButton onPress={() => alert(repoLink)} icon="logo-github" />
+            <RoundButton onPress={() => alert(repoLink)} icon="ios-moon" />
+          </View>
         ),
         headerStyle: {
-          // backgroundColor: "#424242",
+          backgroundColor: "#f0f0f0",
           elevation: 0,
           borderColor: "#424242",
           height: 90,
