@@ -3,12 +3,15 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 
 import Routes from "./src/routes";
+import AppProvider from "./src/hooks";
 
 export default function App() {
   return (
     <NavigationContainer>
       <StatusBar />
-      <Routes />
+      <AppProvider>
+        <Routes />
+      </AppProvider>
     </NavigationContainer>
   );
 }
