@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { View } from "react-native";
+import { useTheme } from "styled-components";
 
 import Home from "../screens/Home";
 import { useGitHubLink } from "../hooks/githubLink";
@@ -10,6 +11,23 @@ const App = createStackNavigator();
 
 const AppRoutes: React.FC = () => {
   const { repoLink } = useGitHubLink();
+  const { backgroundColor, detailColor, fontColor } = useTheme();
+
+  const headerStyle = {
+    backgroundColor,
+    elevation: 0,
+    height: 100,
+    borderBottomColor: detailColor,
+    borderBottomWidth: 1,
+  };
+
+  const headerTitleStyle = useMemo(
+    () => ({
+      fontWeight: "bold",
+      fontSize: 23,
+    }),
+    []
+  );
 
   return (
     <App.Navigator
@@ -17,27 +35,19 @@ const AppRoutes: React.FC = () => {
         headerRight: () => (
           <View
             style={{
-              width: 110,
+              width: 115,
               flexDirection: "row",
               justifyContent: "space-between",
+              marginRight: 15,
             }}
           >
             <RoundButton onPress={() => alert(repoLink)} icon="logo-github" />
-            <RoundButton onPress={() => alert(repoLink)} icon="ios-moon" />
+            <RoundButton onPress={() => {}} icon="ios-moon" />
           </View>
         ),
-        headerStyle: {
-          backgroundColor: "#f0f0f0",
-          elevation: 0,
-          borderColor: "#424242",
-          height: 90,
-          width: 10,
-          borderBottomWidth: 2,
-        },
-        headerTitleStyle: {
-          fontWeight: "bold",
-          fontSize: 23,
-        },
+        headerStyle,
+        headerTintColor: fontColor,
+        headerTitleStyle,
       }}
     >
       <App.Screen name="Home" component={Home} />

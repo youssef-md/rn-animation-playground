@@ -8,7 +8,7 @@ export const Container = styled.View`
   border-radius: 30px;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
+  background: ${(props) => props.theme.cardBackgroundColor};
   border-width: 1px;
-  border-color: #ddd;
+  border-color: ${(props) => props.theme.detailColor};
 `;
