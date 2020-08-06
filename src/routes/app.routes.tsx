@@ -7,11 +7,15 @@ import Home from "../screens/Home";
 import { useGitHubLink } from "../hooks/githubLink";
 import RoundButton from "../components/RoundButton";
 
+interface AppRoutesProps {
+  switchTheme: () => void;
+}
+
 const App = createStackNavigator();
 
-const AppRoutes: React.FC = () => {
+const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
   const { repoLink } = useGitHubLink();
-  const { backgroundColor, detailColor, fontColor } = useTheme();
+  const { type, backgroundColor, detailColor, fontColor } = useTheme();
 
   const headerStyle = {
     backgroundColor,
@@ -42,7 +46,10 @@ const AppRoutes: React.FC = () => {
             }}
           >
             <RoundButton onPress={() => alert(repoLink)} icon="logo-github" />
-            <RoundButton onPress={() => {}} icon="ios-moon" />
+            <RoundButton
+              onPress={switchTheme}
+              icon={type === "dark" ? "ios-sunny" : "ios-moon"}
+            />
           </View>
         ),
         headerStyle,

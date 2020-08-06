@@ -4,13 +4,17 @@ import { useTheme } from "styled-components";
 
 import AppRoutes from "./app.routes";
 
-const Routes: React.FC = () => {
+interface RoutesProps {
+  switchTheme: () => void;
+}
+
+const Routes: React.FC<RoutesProps> = ({ switchTheme }) => {
   const { type } = useTheme();
 
   return (
     <>
       <StatusBar style={type === "dark" ? "light" : "dark"} />
-      <AppRoutes />
+      <AppRoutes switchTheme={switchTheme} />
     </>
   );
 };

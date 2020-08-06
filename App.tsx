@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "styled-components";
 
 import Routes from "./src/routes";
 import AppProvider from "./src/hooks";
-import { dark, light } from "./src/themes";
+import { themes } from "./src/styles";
 
 export default function App() {
+  const [theme, setTheme] = useState(themes.dark);
+
+  const switchTheme = useCallback(() => {
+    setTheme(theme.type === "dark" ? themes.light : themes.dark);
+  }, [theme.type]);
+
   return (
-    <ThemeProvider theme={dark}>
-      <NavigationContainer>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
         <AppProvider>
-          <Routes />
+          <Routes switchTheme={switchTheme} />
         </AppProvider>
-      </NavigationContainer>
-    </ThemeProvider>
+      </ThemeProvider>
+    </NavigationContainer>
   );
 }
