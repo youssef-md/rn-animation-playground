@@ -1,10 +1,10 @@
 export const themes = {
   light: {
     type: "light",
-    backgroundColor: "#EEEEEE",
+    backgroundColor: "#DDD",
     fontColor: "#303030",
     cardBackgroundColor: "#FFFFFF",
-    detailColor: "#d1d1d1",
+    detailColor: "#CCC",
   },
   dark: {
     type: "dark",

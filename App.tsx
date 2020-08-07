@@ -7,7 +7,7 @@ import AppProvider from "./src/hooks";
 import { themes } from "./src/styles";
 
 export default function App() {
-  const [theme, setTheme] = useState(themes.dark);
+  const [theme, setTheme] = useState(themes.light);
 
   const switchTheme = useCallback(() => {
     setTheme(theme.type === "dark" ? themes.light : themes.dark);
