@@ -5,9 +5,8 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: ${(StatusBar?.currentHeight ?? 24) + 10}px 12px 10px 12px;
+  padding: ${(StatusBar?.currentHeight ?? 24) + 10}px 16px 12px 16px;
   background: ${(props) => props.theme.backgroundColor};
-  elevation: 1;
   border-bottom-color: ${(props) => props.theme.detailColor};
 `;
 

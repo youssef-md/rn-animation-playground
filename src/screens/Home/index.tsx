@@ -139,8 +139,8 @@ const Home: React.FC = () => {
       data={sections}
       numColumns={2}
       contentContainerStyle={{
-        paddingHorizontal: 11,
-        paddingTop: 22,
+        paddingHorizontal: 16,
+        paddingTop: 8,
         backgroundColor,
       }}
       columnWrapperStyle={{ justifyContent: "space-between" }}
