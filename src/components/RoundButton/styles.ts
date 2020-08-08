@@ -1,14 +1,15 @@
 import styled from "styled-components/native";
+import { transparentize } from "polished";
 
-export const Touch = styled.TouchableWithoutFeedback``;
+export const Touch = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.5,
+})``;
 
 export const Container = styled.View`
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   border-radius: 30px;
   justify-content: center;
   align-items: center;
-  background: ${(props) => props.theme.cardBackgroundColor};
-  border-width: 1px;
-  border-color: ${(props) => props.theme.detailColor};
+  background: ${(props) => transparentize(0.92, props.theme.fontColor)};
 `;

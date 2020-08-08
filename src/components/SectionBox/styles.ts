@@ -5,14 +5,16 @@ interface ContainerProps {
   color: string;
 }
 
-export const Container = styled.TouchableOpacity<ContainerProps>`
+export const Container = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.6,
+})<ContainerProps>`
   height: 185px;
   width: 48%;
   padding: 0 20px;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   border-radius: 8px;
   background: ${(props) => transparentize(0.7, props.color)};
-  border-width: 0.5px;
+  border-width: 0.3px;
   border-color: ${(props) => props.color};
 `;
 

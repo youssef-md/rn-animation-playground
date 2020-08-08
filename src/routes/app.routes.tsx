@@ -27,7 +27,8 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
         },
       }}
     >
-      <App.Screen name="Playground" component={Home} />
+      <App.Screen name="Animation Playground" component={Home} />
+      <App.Screen name="Animated Layout" component={AnimatedLayout} />
     </App.Navigator>
   );
 };
