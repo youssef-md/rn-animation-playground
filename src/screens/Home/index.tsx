@@ -139,7 +139,7 @@ const Home: React.FC = () => {
       data={sections}
       numColumns={2}
       contentContainerStyle={{
-        paddingHorizontal: 16,
+        paddingHorizontal: 11,
         paddingTop: 22,
         backgroundColor,
       }}
