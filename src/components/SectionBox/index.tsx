@@ -1,26 +1,33 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useNavigation } from "@react-navigation/native";
+
+import { useGitHubLink } from "../../hooks/githubLink";
 
 import { Container, SectionTitle, IconWrapper } from "./styles";
 
 interface SectionBoxProps {
   title: string;
   color: string;
-  route: string;
+  githubLink: string;
   icon: React.ReactNode;
 }
 
 const SectionBox: React.FC<SectionBoxProps> = ({
   title,
   color,
-  route,
+  githubLink,
   icon: Icon,
 }) => {
-  console.log(Icon);
   const navigation = useNavigation();
+  const { setRepoLink } = useGitHubLink();
+
+  const navigateToExample = useCallback(() => {
+    navigation.navigate(title);
+    setRepoLink(githubLink);
+  }, [navigation, title, githubLink, setRepoLink]);
 
   return (
-    <Container color={color} onPress={() => navigation.navigate(route)}>
+    <Container color={color} onPress={navigateToExample}>
       <IconWrapper>{Icon}</IconWrapper>
       <SectionTitle>{title}</SectionTitle>
     </Container>

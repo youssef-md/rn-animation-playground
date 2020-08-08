@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import { FlatList } from "react-native";
 import { useTheme } from "styled-components";
 import {
@@ -7,20 +7,30 @@ import {
   MaterialIcons,
   Entypo,
 } from "@expo/vector-icons";
+import { useIsFocused } from "@react-navigation/native";
 
 import SectionBox from "../../components/SectionBox";
+import { useGitHubLink } from "../../hooks/githubLink";
 
 const Home: React.FC = () => {
   const { backgroundColor } = useTheme();
+  const isFocused = useIsFocused();
+  const { setRepoLink } = useGitHubLink();
+
+  useEffect(() => {
+    if (isFocused) {
+      setRepoLink("https://github.com/youssef-md/reanimated-playground");
+    }
+  }, [isFocused, setRepoLink]);
 
   const defaultIconStyle = useMemo(() => ({ size: 32 }), []);
 
   const sections = useMemo(() => {
     return [
       {
-        title: "Values and Clocks",
+        title: "Animated Layout",
         color: "#E980FC",
-        route: "values-clocks",
+        githubLink: "GitHub Link",
         icon: (
           <MaterialCommunityIcons
             color="#E980FC"
@@ -32,7 +42,7 @@ const Home: React.FC = () => {
       {
         title: "Transitions",
         color: "#058ED9",
-        route: "transitions",
+        githubLink: "GitHub Link",
         icon: (
           <MaterialCommunityIcons
             color="#058ED9"
@@ -44,7 +54,7 @@ const Home: React.FC = () => {
       {
         title: "useTransition",
         color: "#09A129",
-        route: "use-transition",
+        githubLink: "GitHub Link",
         icon: (
           <MaterialCommunityIcons
             color="#09A129"
@@ -56,7 +66,7 @@ const Home: React.FC = () => {
       {
         title: "Timing",
         color: "#F5AB00",
-        route: "timing",
+        githubLink: "GitHub Link",
         icon: (
           <AntDesign color="#F5AB00" name="hourglass" {...defaultIconStyle} />
         ),
@@ -64,7 +74,7 @@ const Home: React.FC = () => {
       {
         title: "Pan Gesture",
         color: "#FF7E6B",
-        route: "pan-gesture",
+        githubLink: "GitHub Link",
         icon: (
           <MaterialCommunityIcons
             color="#FF7E6B"
@@ -76,7 +86,7 @@ const Home: React.FC = () => {
       {
         title: "Decay",
         color: "#7067CF",
-        route: "decay",
+        githubLink: "GitHub Link",
         icon: (
           <MaterialIcons
             color="#7067CF"
@@ -88,13 +98,13 @@ const Home: React.FC = () => {
       {
         title: "Spring",
         color: "#ED33B9",
-        route: "spring",
+        githubLink: "GitHub Link",
         icon: <Entypo color="#ED33B9" name="air" {...defaultIconStyle} />,
       },
       {
         title: "Swiping",
         color: "#1B9AAA",
-        route: "swiping",
+        githubLink: "GitHub Link",
         icon: (
           <MaterialCommunityIcons
             color="#1B9AAA"
@@ -106,13 +116,13 @@ const Home: React.FC = () => {
       {
         title: "Dynamic Springs",
         color: "#00CC33",
-        route: "spring",
+        githubLink: "GitHub Link",
         icon: <Entypo color="#00CC33" name="air" {...defaultIconStyle} />,
       },
       {
         title: "Drag to Sort",
         color: "#FBAF00",
-        route: "drag-sort",
+        githubLink: "GitHub Link",
         icon: (
           <MaterialCommunityIcons
             color="#FBAF00"
@@ -134,12 +144,12 @@ const Home: React.FC = () => {
         backgroundColor,
       }}
       columnWrapperStyle={{ justifyContent: "space-between" }}
-      renderItem={({ item: { title, color, route, icon } }) => (
+      renderItem={({ item: { title, color, githubLink, icon } }) => (
         <SectionBox
-          key={route}
+          key={title}
           title={title}
           color={color}
-          route={route}
+          githubLink={githubLink}
           icon={icon}
         />
       )}
