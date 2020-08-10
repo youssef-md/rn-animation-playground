@@ -13,9 +13,7 @@ export const Container = styled.TouchableOpacity.attrs({
   padding: 0 20px;
   margin-bottom: 15px;
   border-radius: 4px;
-  background: ${(props) => transparentize(0.7, props.color)};
-  border-width: 0.3px;
-  border-color: ${(props) => props.color};
+  background: ${(props) => transparentize(0.55, props.color)};
 `;
 
 export const IconWrapper = styled.View`

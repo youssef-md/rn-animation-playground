@@ -1,6 +1,5 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { useTheme } from "styled-components";
 
 import Header from "../components/Header";
 import Home from "../screens/Home";
@@ -13,15 +12,9 @@ interface AppRoutesProps {
 const App = createStackNavigator();
 
 const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
-  const { backgroundColor } = useTheme();
-
   return (
     <App.Navigator
       screenOptions={{
-        cardStyle: {
-          backgroundColor,
-          flex: 1,
-        },
         header: ({ scene, navigation }) => {
           return (
             <Header

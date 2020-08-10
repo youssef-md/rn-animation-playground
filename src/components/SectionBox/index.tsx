@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { StyleProp, ViewStyle } from "react-native";
 
 import { useGitHubLink } from "../../hooks/githubLink";
 
@@ -10,6 +11,7 @@ interface SectionBoxProps {
   color: string;
   githubLink: string;
   icon: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
 }
 
 const SectionBox: React.FC<SectionBoxProps> = ({
@@ -17,6 +19,7 @@ const SectionBox: React.FC<SectionBoxProps> = ({
   color,
   githubLink,
   icon: Icon,
+  style,
 }) => {
   const navigation = useNavigation();
   const { setRepoLink } = useGitHubLink();
@@ -27,7 +30,7 @@ const SectionBox: React.FC<SectionBoxProps> = ({
   }, [navigation, title, githubLink, setRepoLink]);
 
   return (
-    <Container color={color} onPress={navigateToExample}>
+    <Container color={color} onPress={navigateToExample} style={style}>
       <IconWrapper>{Icon}</IconWrapper>
       <SectionTitle>{title}</SectionTitle>
     </Container>
