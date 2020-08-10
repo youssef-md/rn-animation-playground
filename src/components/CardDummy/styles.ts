@@ -1,15 +1,15 @@
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 
+import { cardDummyWidth, cardDummyHeight } from "../../constants";
+
 interface ContainerProps {
   color: string;
 }
 
 export const Gradient = styled(LinearGradient)<ContainerProps>`
-  width: 90%;
-  flex: 1;
-  /* height: 25%; */
-  margin-bottom: 20px;
+  width: ${cardDummyWidth}px;
+  height: ${cardDummyHeight}px;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
