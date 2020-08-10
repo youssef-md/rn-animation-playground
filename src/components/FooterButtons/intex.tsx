@@ -13,7 +13,7 @@ const FooterButtons: React.FC<FooterButtonsProps> = ({ options }) => {
     <Container>
       {options.map(({ text, onPress }, index) => (
         <>
-          <FooterButton onPress={onPress}>
+          <FooterButton onPress={onPress} key={text}>
             <FooterButtonText>{text}</FooterButtonText>
           </FooterButton>
           {index !== options.length - 1 && <Separator />}

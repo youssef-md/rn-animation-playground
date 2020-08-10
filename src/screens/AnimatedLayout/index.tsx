@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import { ViewStyle } from "react-native";
+import { Transition, Transitioning } from "react-native-reanimated";
 
 import CardDummy from "../../components/CardDummy";
 import { colors, deviceWidth } from "../../constants";
@@ -40,18 +41,29 @@ export interface Option {
   onPress: () => void;
 }
 
+const transition = (
+  <Transition.Change durationMs={400} interpolation="easeInOut" />
+);
+
 const AnimatedLayout: React.FC = () => {
+  const transitionRef = useRef(null);
   const [currentLayout, setCurrentLayout] = useState(ColumnLayout);
 
   const options = useMemo<Option[]>(
     () => [
       {
         text: "Column",
-        onPress: () => setCurrentLayout(ColumnLayout),
+        onPress: () => {
+          transitionRef.current?.animateNextTransition();
+          setCurrentLayout(ColumnLayout);
+        },
       },
       {
         text: "Wrap",
-        onPress: () => setCurrentLayout(WrapLayout),
+        onPress: () => {
+          transitionRef.current?.animateNextTransition();
+          setCurrentLayout(WrapLayout);
+        },
       },
     ],
     []
@@ -59,7 +71,12 @@ const AnimatedLayout: React.FC = () => {
 
   return (
     <>
-      <Container style={currentLayout?.container}>
+      <Container
+        as={Transitioning.View}
+        ref={transitionRef}
+        transition={transition}
+        style={currentLayout?.container}
+      >
         <CardDummy style={currentLayout?.child} color={colors[0]} />
         <CardDummy style={currentLayout?.child} color={colors[1]} />
         <CardDummy style={currentLayout?.child} color={colors[3]} />

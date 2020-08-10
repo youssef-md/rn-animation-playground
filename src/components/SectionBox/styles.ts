@@ -12,7 +12,7 @@ export const Container = styled.TouchableOpacity.attrs({
   width: 48%;
   padding: 0 20px;
   margin-bottom: 15px;
-  border-radius: 4px;
+  border-radius: 8px;
   background: ${(props) => transparentize(0.55, props.color)};
 `;
 
