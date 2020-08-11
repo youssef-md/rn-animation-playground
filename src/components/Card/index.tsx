@@ -11,7 +11,7 @@ interface Card {
   source: number;
 }
 
-const CARD_ASPECT_RATIO = 1324 / 750;
+export const CARD_ASPECT_RATIO = 1324 / 750;
 export const CARD_WIDTH = deviceWidth * 0.9;
 export const CARD_HEIGHT = CARD_WIDTH / CARD_ASPECT_RATIO;
 
@@ -43,10 +43,11 @@ interface CardProps {
   style?: StyleProp<ImageStyle>;
 }
 
-const Card: React.FC<CardProps> = ({ card }) => {
+const Card: React.FC<CardProps> = ({ card, style }) => {
   return (
     <CardImage
       as={Animated.Image}
+      style={style}
       width={CARD_WIDTH}
       height={CARD_HEIGHT}
       source={card.source}

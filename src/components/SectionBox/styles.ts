@@ -13,6 +13,7 @@ export const Container = styled.TouchableOpacity.attrs({
   padding: 0 20px;
   margin-bottom: 15px;
   border-radius: 8px;
+  align-items: flex-start;
   background: ${(props) => transparentize(0.55, props.color)};
 `;
 

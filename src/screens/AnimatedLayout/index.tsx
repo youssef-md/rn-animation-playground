@@ -1,16 +1,21 @@
 import React, { useState, useMemo, useRef } from "react";
-import { ViewStyle } from "react-native";
+import { ViewStyle, ImageStyle } from "react-native";
 import { Transition, Transitioning } from "react-native-reanimated";
+import { ScrollView } from "react-native-gesture-handler";
 
-import CardDummy from "../../components/CardDummy";
-import { colors, deviceWidth } from "../../constants";
+import Card, {
+  cards,
+  CARD_ASPECT_RATIO,
+  CARD_HEIGHT,
+} from "../../components/Card";
+import { deviceWidth, deviceHeight } from "../../constants";
 import FooterButtons from "../../components/FooterButtons/intex";
 
 import { Container } from "./styles";
 
 interface Layout {
   container: ViewStyle;
-  child: ViewStyle;
+  child: ImageStyle;
 }
 
 const ColumnLayout: Layout = {
@@ -18,7 +23,6 @@ const ColumnLayout: Layout = {
     alignItems: "center",
   },
   child: {
-    flex: 1,
     marginBottom: 14,
   },
 };
@@ -31,7 +35,7 @@ const WrapLayout: Layout = {
   },
   child: {
     width: deviceWidth * 0.44,
-    height: 120,
+    height: (deviceWidth * 0.44) / CARD_ASPECT_RATIO,
     margin: 6,
   },
 };
@@ -71,16 +75,24 @@ const AnimatedLayout: React.FC = () => {
 
   return (
     <>
-      <Container
-        as={Transitioning.View}
-        ref={transitionRef}
-        transition={transition}
-        style={currentLayout?.container}
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          height: deviceHeight + CARD_HEIGHT - 20,
+        }}
       >
-        <CardDummy style={currentLayout?.child} color={colors[0]} />
-        <CardDummy style={currentLayout?.child} color={colors[1]} />
-        <CardDummy style={currentLayout?.child} color={colors[3]} />
-      </Container>
+        <Container
+          as={Transitioning.View}
+          ref={transitionRef}
+          transition={transition}
+          style={currentLayout?.container}
+        >
+          <Card style={currentLayout?.child} card={cards[0]} />
+          <Card style={currentLayout?.child} card={cards[1]} />
+          <Card style={currentLayout?.child} card={cards[2]} />
+          <Card style={currentLayout?.child} card={cards[3]} />
+        </Container>
+      </ScrollView>
       <FooterButtons options={options} />
     </>
   );

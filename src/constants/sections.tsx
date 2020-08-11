@@ -4,6 +4,7 @@ import {
   Entypo,
   AntDesign,
   MaterialIcons,
+  Feather,
 } from "@expo/vector-icons";
 
 import { colors } from "./colors";
@@ -15,13 +16,7 @@ export const sections = [
     title: "Animated Layout",
     color: colors[0],
     githubLink: "GitHub Link",
-    icon: (
-      <MaterialCommunityIcons
-        color={colors[0]}
-        name="progress-clock"
-        {...defaultIconStyle}
-      />
-    ),
+    icon: <Feather color={colors[0]} name="layout" {...defaultIconStyle} />,
   },
   {
     title: "Skew Scroll",
@@ -30,7 +25,7 @@ export const sections = [
     icon: (
       <MaterialCommunityIcons
         color={colors[1]}
-        name="transition"
+        name="skew-more"
         {...defaultIconStyle}
       />
     ),
