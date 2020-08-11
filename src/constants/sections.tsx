@@ -24,7 +24,7 @@ export const sections = [
     ),
   },
   {
-    title: "Transitions",
+    title: "Skew Scroll",
     color: colors[1],
     githubLink: "GitHub Link",
     icon: (
