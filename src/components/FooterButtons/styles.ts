@@ -7,7 +7,7 @@ export const Container = styled.View`
 `;
 
 export const FooterButton = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.6,
+  activeOpacity: 0.4,
 })`
   flex: 1;
   padding: 18px 0;

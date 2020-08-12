@@ -31,13 +31,13 @@ export const sections = [
     ),
   },
   {
-    title: "useTransition",
+    title: "Animated Wallet",
     color: colors[2],
     githubLink: "GitHub Link",
     icon: (
       <MaterialCommunityIcons
         color={colors[2]}
-        name="hook"
+        name="wallet-outline"
         {...defaultIconStyle}
       />
     ),

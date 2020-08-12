@@ -9,7 +9,7 @@ import Card, {
   CARD_HEIGHT,
 } from "../../components/Card";
 import { deviceWidth, deviceHeight } from "../../constants";
-import FooterButtons, { Option } from "../../components/FooterButtons/intex";
+import FooterButtons, { Option } from "../../components/FooterButtons";
 
 import { Container } from "./styles";
 

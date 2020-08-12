@@ -1,4 +1,4 @@
-## Animated Layout
+## Skew Scroll
 
 Built using [Reanimated v1](https://github.com/software-mansion/react-native-reanimated) and [React Native Redash](https://github.com/wcandillon/react-native-redash).
 
