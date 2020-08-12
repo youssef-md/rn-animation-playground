@@ -43,7 +43,7 @@ export const sections = [
     ),
   },
   {
-    title: "Timing",
+    title: "Animated Onboard",
     color: colors[3],
     githubLink: "GitHub Link",
     icon: (

@@ -12,7 +12,7 @@ export const Container = styled.View`
 
 export const HeaderTitle = styled.Text`
   flex: 1;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: bold;
   color: ${(props) => props.theme.fontColor};
 `;
