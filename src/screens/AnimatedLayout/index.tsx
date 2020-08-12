@@ -9,7 +9,7 @@ import Card, {
   CARD_HEIGHT,
 } from "../../components/Card";
 import { deviceWidth, deviceHeight } from "../../constants";
-import FooterButtons from "../../components/FooterButtons/intex";
+import FooterButtons, { Option } from "../../components/FooterButtons/intex";
 
 import { Container } from "./styles";
 
@@ -39,11 +39,6 @@ const WrapLayout: Layout = {
     margin: 6,
   },
 };
-
-export interface Option {
-  text: string;
-  onPress: () => void;
-}
 
 const transition = (
   <Transition.Change durationMs={400} interpolation="easeInOut" />

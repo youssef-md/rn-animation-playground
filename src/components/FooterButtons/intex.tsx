@@ -1,8 +1,11 @@
 import React from "react";
 
-import { Option } from "../../screens/AnimatedLayout";
-
 import { Container, FooterButton, FooterButtonText, Separator } from "./styles";
+
+export interface Option {
+  text: string;
+  onPress: () => void;
+}
 
 interface FooterButtonsProps {
   options: Option[];
