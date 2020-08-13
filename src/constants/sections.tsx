@@ -2,9 +2,9 @@ import React from "react";
 import {
   MaterialCommunityIcons,
   Entypo,
-  AntDesign,
   MaterialIcons,
   Feather,
+  Octicons,
 } from "@expo/vector-icons";
 
 import { colors } from "./colors";
@@ -43,11 +43,11 @@ export const sections = [
     ),
   },
   {
-    title: "Animated Onboard",
+    title: "Dot Inversion",
     color: colors[3],
     githubLink: "GitHub Link",
     icon: (
-      <AntDesign color={colors[3]} name="hourglass" {...defaultIconStyle} />
+      <Octicons color={colors[3]} name="primitive-dot" {...defaultIconStyle} />
     ),
   },
   {

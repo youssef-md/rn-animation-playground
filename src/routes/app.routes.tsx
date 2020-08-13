@@ -6,7 +6,7 @@ import Home from "../screens/Home";
 import AnimatedLayout from "../screens/AnimatedLayout";
 import SkewScroll from "../screens/SkewScroll";
 import AnimatedWallet from "../screens/AnimatedWallet";
-import AnimatedOnboard from "../screens/AnimatedOnboard";
+import DotInversion from "../screens/DotInversion";
 
 interface AppRoutesProps {
   switchTheme: () => void;
@@ -33,7 +33,7 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
       <App.Screen name="Animated Layout" component={AnimatedLayout} />
       <App.Screen name="Skew Scroll" component={SkewScroll} />
       <App.Screen name="Animated Wallet" component={AnimatedWallet} />
-      <App.Screen name="Animated Onboard" component={AnimatedOnboard} />
+      <App.Screen name="Dot Inversion" component={DotInversion} />
     </App.Navigator>
   );
 };
