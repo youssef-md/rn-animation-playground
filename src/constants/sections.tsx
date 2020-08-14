@@ -51,16 +51,10 @@ export const sections = [
     ),
   },
   {
-    title: "Pan Gesture",
+    title: "Animated Accordion",
     color: colors[4],
     githubLink: "GitHub Link",
-    icon: (
-      <MaterialCommunityIcons
-        color={colors[4]}
-        name="gesture"
-        {...defaultIconStyle}
-      />
-    ),
+    icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
   },
   {
     title: "Decay",

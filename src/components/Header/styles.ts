@@ -5,14 +5,14 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: ${(StatusBar?.currentHeight ?? 24) + 10}px 16px 12px 16px;
+  padding: ${(StatusBar?.currentHeight ?? 24) + 8}px 16px 10px 16px;
   background: ${(props) => props.theme.backgroundColor};
   border-bottom-color: ${(props) => props.theme.detailColor};
 `;
 
 export const HeaderTitle = styled.Text`
   flex: 1;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: bold;
   color: ${(props) => props.theme.fontColor};
 `;
