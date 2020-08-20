@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, {useState} from 'react';
 import Animated, {
   interpolate,
   Extrapolate,
   Easing,
-} from "react-native-reanimated";
-import { useTimingTransition, interpolateColor } from "react-native-redash";
-import { useTheme } from "styled-components";
-import { Entypo } from "@expo/vector-icons";
+} from 'react-native-reanimated';
+import {useTimingTransition, interpolateColor} from 'react-native-redash';
+import {useTheme} from 'styled-components';
+import Entypo from 'react-native-vector-icons/Entypo';
 
-import { Container, CurrentBackgroundColor, Circle } from "./styles";
+import {Container, CurrentBackgroundColor, Circle} from './styles';
 
 const DotInversion: React.FC = () => {
-  const { backgroundColor } = useTheme();
+  const {backgroundColor} = useTheme();
   const [toggleInversion, setToggleInversion] = useState(0);
 
   const transition = useTimingTransition(toggleInversion, {
@@ -26,7 +26,7 @@ const DotInversion: React.FC = () => {
         style={{
           backgroundColor: interpolateColor(transition, {
             inputRange: [0, 0.5, 0.501, 1],
-            outputRange: [backgroundColor, backgroundColor, "#f9c", "#f9c"],
+            outputRange: [backgroundColor, backgroundColor, '#f9c', '#f9c'],
           }),
         }}
       />
@@ -34,7 +34,7 @@ const DotInversion: React.FC = () => {
         style={{
           borderRadius: 40,
           transform: [
-            { perspective: 300 },
+            {perspective: 300},
             {
               rotateY: interpolate(transition, {
                 inputRange: [0, 0.5, 1],
@@ -59,10 +59,9 @@ const DotInversion: React.FC = () => {
           ],
           backgroundColor: interpolateColor(transition, {
             inputRange: [0, 0.5, 0.501, 1],
-            outputRange: ["#f9c", "#f9c", backgroundColor, backgroundColor],
+            outputRange: ['#f9c', '#f9c', backgroundColor, backgroundColor],
           }),
-        }}
-      >
+        }}>
         <Circle onPress={() => setToggleInversion(toggleInversion ^ 1)}>
           <Animated.View
             style={{
@@ -70,12 +69,11 @@ const DotInversion: React.FC = () => {
                 inputRange: [0, 0.001, 0.999, 1],
                 outputRange: [1, 0, 0, 1],
               }),
-            }}
-          >
+            }}>
             <Entypo
               name="chevron-right"
               size={32}
-              color={toggleInversion ? "#f9c" : backgroundColor}
+              color={toggleInversion ? '#f9c' : backgroundColor}
             />
           </Animated.View>
         </Circle>

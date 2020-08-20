@@ -1,16 +1,16 @@
-import React from "react";
-import { Ionicons } from "@expo/vector-icons";
-import { useTheme } from "styled-components";
+import React from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useTheme} from 'styled-components';
 
-import { Touch, Container } from "./styles";
+import {Touch, Container} from './styles';
 
 interface RoundButtonProps {
   icon: string;
   onPress: () => void;
 }
 
-const RoundButton: React.FC<RoundButtonProps> = ({ icon, onPress }) => {
-  const { fontColor } = useTheme();
+const RoundButton: React.FC<RoundButtonProps> = ({icon, onPress}) => {
+  const {fontColor} = useTheme();
 
   return (
     <Touch onPress={onPress}>

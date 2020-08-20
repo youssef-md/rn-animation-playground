@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Animated, {
   useCode,
   startClock,
@@ -6,12 +6,12 @@ import Animated, {
   set,
   interpolate,
   Extrapolate,
-} from "react-native-reanimated";
-import { useValue, useClock, useDiff, useConst } from "react-native-redash";
+} from 'react-native-reanimated';
+import {useValue, useClock, useDiff, useConst} from 'react-native-redash';
 
-import Card, { cards } from "../../components/Card";
+import Card, {cards} from '../../components/Card';
 
-import { Container, AnimatedCardView } from "./styles";
+import {Container, AnimatedCardView} from './styles';
 
 const SkewScroll: React.FC = () => {
   const cardsArray = [...cards, ...cards, ...cards];
@@ -22,10 +22,10 @@ const SkewScroll: React.FC = () => {
     Animated.event([
       {
         nativeEvent: {
-          contentOffset: { y },
+          contentOffset: {y},
         },
       },
-    ])
+    ]),
   );
 
   const dy = useDiff(y); // calcs the diff between frames
@@ -44,14 +44,12 @@ const SkewScroll: React.FC = () => {
       as={Animated.ScrollView}
       scrollEventThrottle={1}
       onScroll={onScroll}
-      showsVerticalScrollIndicator={false}
-    >
+      showsVerticalScrollIndicator={false}>
       {cardsArray.map((card, i) => (
         <AnimatedCardView
           as={Animated.View}
-          style={{ transform: [{ skewY }] }}
-          key={i}
-        >
+          style={{transform: [{skewY}]}}
+          key={i}>
           <Card card={card} />
         </AnimatedCardView>
       ))}

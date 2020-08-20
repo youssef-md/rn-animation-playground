@@ -1,27 +1,26 @@
-import React from "react";
-import {
-  MaterialCommunityIcons,
-  Entypo,
-  MaterialIcons,
-  Feather,
-  Octicons,
-} from "@expo/vector-icons";
+import React from 'react';
 
-import { colors } from "./colors";
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Feather from 'react-native-vector-icons/Feather';
+import Octicons from 'react-native-vector-icons/Octicons';
+import Entypo from 'react-native-vector-icons/Entypo';
 
-const defaultIconStyle = { size: 32 };
+import {colors} from './colors';
+
+const defaultIconStyle = {size: 32};
 
 export const sections = [
   {
-    title: "Animated Layout",
+    title: 'Animated Layout',
     color: colors[0],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: <Feather color={colors[0]} name="layout" {...defaultIconStyle} />,
   },
   {
-    title: "Skew Scroll",
+    title: 'Skew Scroll',
     color: colors[1],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: (
       <MaterialCommunityIcons
         color={colors[1]}
@@ -31,9 +30,9 @@ export const sections = [
     ),
   },
   {
-    title: "Animated Wallet",
+    title: 'Animated Wallet',
     color: colors[2],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: (
       <MaterialCommunityIcons
         color={colors[2]}
@@ -43,23 +42,23 @@ export const sections = [
     ),
   },
   {
-    title: "Dot Inversion",
+    title: 'Dot Inversion',
     color: colors[3],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: (
       <Octicons color={colors[3]} name="primitive-dot" {...defaultIconStyle} />
     ),
   },
   {
-    title: "Animated Accordion",
+    title: 'Animated Accordion',
     color: colors[4],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
   },
   {
-    title: "Decay",
+    title: 'Decay',
     color: colors[5],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: (
       <MaterialIcons
         color={colors[5]}
@@ -69,15 +68,15 @@ export const sections = [
     ),
   },
   {
-    title: "Spring",
+    title: 'Spring',
     color: colors[6],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: <Entypo color={colors[6]} name="air" {...defaultIconStyle} />,
   },
   {
-    title: "Swiping",
+    title: 'Swiping',
     color: colors[7],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: (
       <MaterialCommunityIcons
         color={colors[7]}
@@ -87,15 +86,15 @@ export const sections = [
     ),
   },
   {
-    title: "Dynamic Springs",
+    title: 'Dynamic Springs',
     color: colors[8],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: <Entypo color={colors[8]} name="air" {...defaultIconStyle} />,
   },
   {
-    title: "Drag to Sort",
+    title: 'Drag to Sort',
     color: colors[9],
-    githubLink: "GitHub Link",
+    githubLink: 'GitHub Link',
     icon: (
       <MaterialCommunityIcons
         color={colors[9]}
