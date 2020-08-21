@@ -1,8 +1,8 @@
-import React from 'react';
-import { useTheme } from 'styled-components';
+import React from "react";
+import { useTheme } from "styled-components";
 
-import RoundButton from '../RoundButton';
-import { useGitHubLink } from '../../hooks/githubLink';
+import RoundButton from "../RoundButton";
+import { useGitHubLink } from "../../hooks/githubLink";
 
 import {
   Container,
@@ -10,7 +10,7 @@ import {
   RightItems,
   BackArrowContainer,
   Separator,
-} from './styles';
+} from "./styles";
 
 interface HeaderProps {
   routeName: string;
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ routeName, switchTheme, goBack }) => {
 
   return (
     <Container>
-      {routeName !== 'Animation Playground' && (
+      {routeName !== "Animation Playground" && (
         <BackArrowContainer>
           <RoundButton icon="md-arrow-round-back" onPress={goBack} />
         </BackArrowContainer>
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ routeName, switchTheme, goBack }) => {
       <HeaderTitle>{routeName}</HeaderTitle>
       <RightItems>
         <RoundButton
-          icon={type === 'dark' ? 'ios-sunny' : 'ios-moon'}
+          icon={type === "dark" ? "ios-sunny" : "ios-moon"}
           onPress={switchTheme}
         />
         <Separator />

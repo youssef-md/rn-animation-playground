@@ -1,10 +1,10 @@
-import React from 'react';
-import { StyleProp, ImageStyle } from 'react-native';
-import Animated from 'react-native-reanimated';
+import React from "react";
+import { StyleProp, ImageStyle } from "react-native";
+import Animated from "react-native-reanimated";
 
-import { deviceWidth } from '../../constants';
+import { deviceWidth } from "../../constants";
 
-import { CardImage } from './styles';
+import { CardImage } from "./styles";
 
 interface Card {
   id: number;
@@ -18,23 +18,23 @@ export const CARD_HEIGHT = CARD_WIDTH / CARD_ASPECT_RATIO;
 export const cards: Card[] = [
   {
     id: 1,
-    source: require('../../../assets/card1.png'),
+    source: require("../../../assets/card1.png"),
   },
   {
     id: 2,
-    source: require('../../../assets/card2.png'),
+    source: require("../../../assets/card2.png"),
   },
   {
     id: 3,
-    source: require('../../../assets/card3.png'),
+    source: require("../../../assets/card3.png"),
   },
   {
     id: 4,
-    source: require('../../../assets/card4.png'),
+    source: require("../../../assets/card4.png"),
   },
   {
     id: 5,
-    source: require('../../../assets/card5.png'),
+    source: require("../../../assets/card5.png"),
   },
 ];
 

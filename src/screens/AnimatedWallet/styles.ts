@@ -1,7 +1,7 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
-import { deviceHeight } from '../../constants';
-import { CARD_HEIGHT } from '../../components/Card';
+import { deviceHeight } from "../../constants";
+import { CARD_HEIGHT } from "../../components/Card";
 
 export const Container = styled.View`
   flex: 1;

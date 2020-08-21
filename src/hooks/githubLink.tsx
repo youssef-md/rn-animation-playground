@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext } from "react";
 
 interface GitHubLinkShape {
   repoLink: string;
@@ -9,7 +9,7 @@ const GitHubLinkContext = createContext<GitHubLinkShape>({} as GitHubLinkShape);
 
 const GitHubLinkProvider: React.FC = ({ children }) => {
   const [repoLink, setRepoLink] = useState(
-    'https://github.com/youssef-md/reanimated-playground',
+    "https://github.com/youssef-md/reanimated-playground"
   );
 
   return (
@@ -24,7 +24,7 @@ function useGitHubLink(): GitHubLinkShape {
 
   if (!context) {
     throw new Error(
-      'useGitHubLink must be used within an <GitHubLinkProvider>',
+      "useGitHubLink must be used within an <GitHubLinkProvider>"
     );
   }
 

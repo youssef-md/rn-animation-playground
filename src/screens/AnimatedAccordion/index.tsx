@@ -1,9 +1,9 @@
-import React, { useState, useRef, useCallback } from 'react';
-import { Transition, Transitioning } from 'react-native-reanimated';
-import Entypo from 'react-native-vector-icons/Entypo';
+import React, { useState, useRef, useCallback } from "react";
+import { Transition, Transitioning } from "react-native-reanimated";
+import { Entypo } from "@expo/vector-icons";
 
-import { Container, Card, Header, Heading, SubList, SubText } from './styles';
-import { categories } from './data';
+import { Container, Card, Header, Heading, SubList, SubText } from "./styles";
+import { categories } from "./data";
 
 const transition = (
   <Transition.Change durationMs={400} interpolation="easeInOut" />
@@ -18,20 +18,22 @@ const AnimatedAccordion: React.FC = () => {
       transitionRef.current?.animateNextTransition();
       setSelectedIndex(index === selectedIndex ? null : index);
     },
-    [selectedIndex, setSelectedIndex],
+    [selectedIndex, setSelectedIndex]
   );
 
   return (
     <Container
       as={Transitioning.View}
       ref={transitionRef}
-      transition={transition}>
+      transition={transition}
+    >
       {categories.map(({ category, subCategories, bg, color }, index) => {
         return (
           <Card
             key={category}
             background={bg}
-            onPress={() => toggleAccordion(index)}>
+            onPress={() => toggleAccordion(index)}
+          >
             <Header>
               <Heading color={color}>{category}</Heading>
               <Entypo
@@ -40,7 +42,7 @@ const AnimatedAccordion: React.FC = () => {
                 color={color}
                 style={{
                   transform: [
-                    { rotate: index === selectedIndex ? '180deg' : '0deg' },
+                    { rotate: index === selectedIndex ? "180deg" : "0deg" },
                   ],
                 }}
               />
@@ -48,9 +50,7 @@ const AnimatedAccordion: React.FC = () => {
             {index === selectedIndex && (
               <SubList>
                 {subCategories.map((subcategory) => (
-                  <SubText color={color} key={subcategory}>
-                    {subcategory}
-                  </SubText>
+                  <SubText color={color}>{subcategory}</SubText>
                 ))}
               </SubList>
             )}

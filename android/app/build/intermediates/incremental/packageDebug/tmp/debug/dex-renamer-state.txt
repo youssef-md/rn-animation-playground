@@ -1,4 +1,0 @@
-#Thu Aug 20 22:53:32 BRT 2020
-base.0=/home/youssef-md/dev/coding/projects/rn-animation-playground/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

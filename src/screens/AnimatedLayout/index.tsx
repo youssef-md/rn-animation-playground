@@ -1,17 +1,17 @@
-import React, { useState, useMemo, useRef } from 'react';
-import { ViewStyle, ImageStyle } from 'react-native';
-import { Transition, Transitioning } from 'react-native-reanimated';
-import { ScrollView } from 'react-native-gesture-handler';
+import React, { useState, useMemo, useRef } from "react";
+import { ViewStyle, ImageStyle } from "react-native";
+import { Transition, Transitioning } from "react-native-reanimated";
+import { ScrollView } from "react-native-gesture-handler";
 
 import Card, {
   cards,
   CARD_ASPECT_RATIO,
   CARD_HEIGHT,
-} from '../../components/Card';
-import { deviceWidth, deviceHeight } from '../../constants';
-import FooterButtons, { Option } from '../../components/FooterButtons';
+} from "../../components/Card";
+import { deviceWidth, deviceHeight } from "../../constants";
+import FooterButtons, { Option } from "../../components/FooterButtons";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
 interface Layout {
   container: ViewStyle;
@@ -20,7 +20,7 @@ interface Layout {
 
 const ColumnLayout: Layout = {
   container: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   child: {
     marginBottom: 14,
@@ -29,9 +29,9 @@ const ColumnLayout: Layout = {
 
 const WrapLayout: Layout = {
   container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    justifyContent: "center",
+    flexWrap: "wrap",
   },
   child: {
     width: deviceWidth * 0.44,
@@ -51,21 +51,21 @@ const AnimatedLayout: React.FC = () => {
   const options = useMemo<Option[]>(
     () => [
       {
-        text: 'Column',
+        text: "Column",
         onPress: () => {
           transitionRef.current?.animateNextTransition();
           setCurrentLayout(ColumnLayout);
         },
       },
       {
-        text: 'Wrap',
+        text: "Wrap",
         onPress: () => {
           transitionRef.current?.animateNextTransition();
           setCurrentLayout(WrapLayout);
         },
       },
     ],
-    [],
+    []
   );
 
   return (
@@ -74,12 +74,14 @@ const AnimatedLayout: React.FC = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           height: deviceHeight + CARD_HEIGHT - 20,
-        }}>
+        }}
+      >
         <Container
           as={Transitioning.View}
           ref={transitionRef}
           transition={transition}
-          style={currentLayout?.container}>
+          style={currentLayout?.container}
+        >
           <Card style={currentLayout?.child} card={cards[0]} />
           <Card style={currentLayout?.child} card={cards[1]} />
           <Card style={currentLayout?.child} card={cards[2]} />
