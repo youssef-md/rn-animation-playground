@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import { transparentize } from "polished";
+import styled from 'styled-components/native';
+import { transparentize } from 'polished';
 
 interface ContainerProps {
   color: string;

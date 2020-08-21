@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import { FlatList } from "react-native";
-import { useTheme } from "styled-components";
-import { useIsFocused } from "@react-navigation/native";
+import React, { useEffect } from 'react';
+import { FlatList } from 'react-native';
+import { useTheme } from 'styled-components';
+import { useIsFocused } from '@react-navigation/native';
 
-import SectionBox from "../../components/SectionBox";
-import { useGitHubLink } from "../../hooks/githubLink";
-import { sections } from "../../constants";
+import SectionBox from '../../components/SectionBox';
+import { useGitHubLink } from '../../hooks/githubLink';
+import { sections } from '../../constants';
 
 const Home: React.FC = () => {
   const { backgroundColor } = useTheme();
@@ -14,7 +14,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     if (isFocused) {
-      setRepoLink("https://github.com/youssef-md/reanimated-playground");
+      setRepoLink('https://github.com/youssef-md/reanimated-playground');
     }
   }, [isFocused, setRepoLink]);
 
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         paddingTop: 8,
         backgroundColor,
       }}
-      columnWrapperStyle={{ justifyContent: "space-between" }}
+      columnWrapperStyle={{ justifyContent: 'space-between' }}
       keyExtractor={({ title }) => title}
       renderItem={({ item: { title, color, githubLink, icon } }) => (
         <SectionBox

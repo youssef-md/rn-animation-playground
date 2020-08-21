@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Container, FooterButton, FooterButtonText, Separator } from "./styles";
+import { Container, FooterButton, FooterButtonText, Separator } from './styles';
 
 export interface Option {
   text: string;

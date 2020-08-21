@@ -1,23 +1,30 @@
-import React, { useState } from "react";
-import Animated, { interpolate, multiply } from "react-native-reanimated";
-import { useSpringTransition } from "react-native-redash";
+import React, { useState } from 'react';
+import Animated, { interpolate, multiply } from 'react-native-reanimated';
+import { useSpringTransition } from 'react-native-redash';
 
-import Card, { cards } from "../../components/Card";
-import FooterButtons from "../../components/FooterButtons";
-import { deviceWidth } from "../../constants";
+import Card, { cards } from '../../components/Card';
+import FooterButtons from '../../components/FooterButtons';
+import { deviceWidth } from '../../constants';
 
 const walletFront = {
-  id: Math.random(),
-  source: require("../../../assets/wallet-front.png"),
+  id: 99,
+  source: require('../../../assets/wallet-front.png'),
 };
 
 const walletBack = {
-  id: Math.random(),
-  source: require("../../../assets/wallet-back.png"),
+  id: 999,
+  source: require('../../../assets/wallet-back.png'),
 };
 
-import { Container, AbsoluteAnimatedView } from "./styles";
-const wallet = [walletBack, cards[0], cards[3], walletFront];
+import { Container, AbsoluteAnimatedView } from './styles';
+const wallet = [
+  walletBack,
+  cards[0],
+  cards[1],
+  cards[2],
+  cards[3],
+  walletFront,
+];
 
 const transformOrigin = -1 * (deviceWidth / 2);
 
@@ -29,21 +36,19 @@ const AnimatedWallet: React.FC = () => {
     <>
       <Container>
         {wallet.map((card, index) => {
-          const direction = interpolate(index, {
-            inputRange: [0, 1, 2],
-            outputRange: [1, 0, -1],
-          });
+          const direction = index - 2;
 
           const rotate = multiply(
             direction,
             interpolate(transition, {
               inputRange: [0, 1],
-              outputRange: [0, Math.PI / 14],
-            })
+              outputRange: [0, Math.PI / 20],
+            }),
           );
 
           return (
             <AbsoluteAnimatedView
+              key={card.id}
               as={Animated.View}
               style={{
                 transform: [
@@ -51,9 +56,8 @@ const AnimatedWallet: React.FC = () => {
                   { rotate },
                   { translateX: -transformOrigin },
                 ],
-              }}
-            >
-              <Card key={card.id} card={card} />
+              }}>
+              <Card card={card} />
             </AbsoluteAnimatedView>
           );
         })}
@@ -61,7 +65,7 @@ const AnimatedWallet: React.FC = () => {
       <FooterButtons
         options={[
           {
-            text: toggled ? "Close" : "Open",
+            text: toggled ? 'Close' : 'Open',
             onPress: () => setToggled(toggled ^ 1),
           },
         ]}

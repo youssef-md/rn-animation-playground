@@ -1,8 +1,8 @@
-import React from "react";
-import { Ionicons } from "@expo/vector-icons";
-import { useTheme } from "styled-components";
+import React from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from 'styled-components';
 
-import { Touch, Container } from "./styles";
+import { Touch, Container } from './styles';
 
 interface RoundButtonProps {
   icon: string;
