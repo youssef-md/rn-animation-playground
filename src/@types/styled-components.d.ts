@@ -1,4 +1,4 @@
-import {themes} from '../styles';
+import { themes } from '../styles';
 
 type ThemeInterface = typeof themes.dark;
 

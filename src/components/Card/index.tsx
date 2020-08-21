@@ -1,10 +1,10 @@
 import React from 'react';
-import {StyleProp, ImageStyle} from 'react-native';
+import { StyleProp, ImageStyle } from 'react-native';
 import Animated from 'react-native-reanimated';
 
-import {deviceWidth} from '../../constants';
+import { deviceWidth } from '../../constants';
 
-import {CardImage} from './styles';
+import { CardImage } from './styles';
 
 interface Card {
   id: number;
@@ -43,7 +43,7 @@ interface CardProps {
   style?: StyleProp<ImageStyle>;
 }
 
-const Card: React.FC<CardProps> = ({card, style}) => {
+const Card: React.FC<CardProps> = ({ card, style }) => {
   return (
     <CardImage
       as={Animated.Image}

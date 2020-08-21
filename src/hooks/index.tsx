@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {GitHubLinkProvider} from './githubLink';
+import { GitHubLinkProvider } from './githubLink';
 
-const AppProvider: React.FC = ({children}) => {
+const AppProvider: React.FC = ({ children }) => {
   return <GitHubLinkProvider>{children}</GitHubLinkProvider>;
 };
 

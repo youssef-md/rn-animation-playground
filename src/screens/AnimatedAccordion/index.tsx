@@ -1,9 +1,9 @@
-import React, {useState, useRef, useCallback} from 'react';
-import {Transition, Transitioning} from 'react-native-reanimated';
-import {Entypo} from '@expo/vector-icons';
+import React, { useState, useRef, useCallback } from 'react';
+import { Transition, Transitioning } from 'react-native-reanimated';
+import Entypo from 'react-native-vector-icons/Entypo';
 
-import {Container, Card, Header, Heading, SubList, SubText} from './styles';
-import {categories} from './data';
+import { Container, Card, Header, Heading, SubList, SubText } from './styles';
+import { categories } from './data';
 
 const transition = (
   <Transition.Change durationMs={400} interpolation="easeInOut" />
@@ -26,7 +26,7 @@ const AnimatedAccordion: React.FC = () => {
       as={Transitioning.View}
       ref={transitionRef}
       transition={transition}>
-      {categories.map(({category, subCategories, bg, color}, index) => {
+      {categories.map(({ category, subCategories, bg, color }, index) => {
         return (
           <Card
             key={category}
@@ -40,7 +40,7 @@ const AnimatedAccordion: React.FC = () => {
                 color={color}
                 style={{
                   transform: [
-                    {rotate: index === selectedIndex ? '180deg' : '0deg'},
+                    { rotate: index === selectedIndex ? '180deg' : '0deg' },
                   ],
                 }}
               />

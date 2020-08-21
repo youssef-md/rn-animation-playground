@@ -1,8 +1,8 @@
 import React from 'react';
-import {useTheme} from 'styled-components';
+import { useTheme } from 'styled-components';
 
 import RoundButton from '../RoundButton';
-import {useGitHubLink} from '../../hooks/githubLink';
+import { useGitHubLink } from '../../hooks/githubLink';
 
 import {
   Container,
@@ -18,9 +18,9 @@ interface HeaderProps {
   goBack: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({routeName, switchTheme, goBack}) => {
-  const {type} = useTheme();
-  const {repoLink} = useGitHubLink();
+const Header: React.FC<HeaderProps> = ({ routeName, switchTheme, goBack }) => {
+  const { type } = useTheme();
+  const { repoLink } = useGitHubLink();
 
   return (
     <Container>

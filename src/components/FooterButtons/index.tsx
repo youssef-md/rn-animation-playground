@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Container, FooterButton, FooterButtonText, Separator} from './styles';
+import { Container, FooterButton, FooterButtonText, Separator } from './styles';
 
 export interface Option {
   text: string;
@@ -11,10 +11,10 @@ interface FooterButtonsProps {
   options: Option[];
 }
 
-const FooterButtons: React.FC<FooterButtonsProps> = ({options}) => {
+const FooterButtons: React.FC<FooterButtonsProps> = ({ options }) => {
   return (
     <Container>
-      {options.map(({text, onPress}, index) => (
+      {options.map(({ text, onPress }, index) => (
         <>
           <FooterButton onPress={onPress} key={text}>
             <FooterButtonText>{text}</FooterButtonText>

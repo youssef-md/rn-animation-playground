@@ -1,14 +1,13 @@
 import React from 'react';
-
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-import {colors} from './colors';
+import { colors } from './colors';
 
-const defaultIconStyle = {size: 32};
+const defaultIconStyle = { size: 32 };
 
 export const sections = [
   {

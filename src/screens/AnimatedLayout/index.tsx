@@ -1,17 +1,17 @@
-import React, {useState, useMemo, useRef} from 'react';
-import {ViewStyle, ImageStyle} from 'react-native';
-import {Transition, Transitioning} from 'react-native-reanimated';
-import {ScrollView} from 'react-native-gesture-handler';
+import React, { useState, useMemo, useRef } from 'react';
+import { ViewStyle, ImageStyle } from 'react-native';
+import { Transition, Transitioning } from 'react-native-reanimated';
+import { ScrollView } from 'react-native-gesture-handler';
 
 import Card, {
   cards,
   CARD_ASPECT_RATIO,
   CARD_HEIGHT,
 } from '../../components/Card';
-import {deviceWidth, deviceHeight} from '../../constants';
-import FooterButtons, {Option} from '../../components/FooterButtons';
+import { deviceWidth, deviceHeight } from '../../constants';
+import FooterButtons, { Option } from '../../components/FooterButtons';
 
-import {Container} from './styles';
+import { Container } from './styles';
 
 interface Layout {
   container: ViewStyle;

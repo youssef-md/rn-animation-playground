@@ -7,11 +7,11 @@ import Animated, {
   interpolate,
   Extrapolate,
 } from 'react-native-reanimated';
-import {useValue, useClock, useDiff, useConst} from 'react-native-redash';
+import { useValue, useClock, useDiff, useConst } from 'react-native-redash';
 
-import Card, {cards} from '../../components/Card';
+import Card, { cards } from '../../components/Card';
 
-import {Container, AnimatedCardView} from './styles';
+import { Container, AnimatedCardView } from './styles';
 
 const SkewScroll: React.FC = () => {
   const cardsArray = [...cards, ...cards, ...cards];
@@ -22,7 +22,7 @@ const SkewScroll: React.FC = () => {
     Animated.event([
       {
         nativeEvent: {
-          contentOffset: {y},
+          contentOffset: { y },
         },
       },
     ]),
@@ -48,7 +48,7 @@ const SkewScroll: React.FC = () => {
       {cardsArray.map((card, i) => (
         <AnimatedCardView
           as={Animated.View}
-          style={{transform: [{skewY}]}}
+          style={{ transform: [{ skewY }] }}
           key={i}>
           <Card card={card} />
         </AnimatedCardView>

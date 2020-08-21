@@ -1,9 +1,9 @@
-import React, {useState, useCallback} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {ThemeProvider} from 'styled-components';
+import React, { useState, useCallback } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { ThemeProvider } from 'styled-components';
 
 import AppProvider from './hooks';
-import {themes} from './styles';
+import { themes } from './styles';
 import Routes from './routes';
 
 export default function App() {

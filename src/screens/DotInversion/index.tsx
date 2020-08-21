@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Animated, {
   interpolate,
   Extrapolate,
   Easing,
 } from 'react-native-reanimated';
-import {useTimingTransition, interpolateColor} from 'react-native-redash';
-import {useTheme} from 'styled-components';
+import { useTimingTransition, interpolateColor } from 'react-native-redash';
+import { useTheme } from 'styled-components';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-import {Container, CurrentBackgroundColor, Circle} from './styles';
+import { Container, CurrentBackgroundColor, Circle } from './styles';
 
 const DotInversion: React.FC = () => {
-  const {backgroundColor} = useTheme();
+  const { backgroundColor } = useTheme();
   const [toggleInversion, setToggleInversion] = useState(0);
 
   const transition = useTimingTransition(toggleInversion, {
@@ -34,7 +34,7 @@ const DotInversion: React.FC = () => {
         style={{
           borderRadius: 40,
           transform: [
-            {perspective: 300},
+            { perspective: 300 },
             {
               rotateY: interpolate(transition, {
                 inputRange: [0, 0.5, 1],

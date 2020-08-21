@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {transparentize} from 'polished';
+import { transparentize } from 'polished';
 
 export const Touch = styled.TouchableOpacity.attrs({
   activeOpacity: 0.5,

@@ -1,10 +1,10 @@
-import React, {useCallback} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {StyleProp, ViewStyle} from 'react-native';
+import React, { useCallback } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { StyleProp, ViewStyle } from 'react-native';
 
-import {useGitHubLink} from '../../hooks/githubLink';
+import { useGitHubLink } from '../../hooks/githubLink';
 
-import {Container, SectionTitle, IconWrapper} from './styles';
+import { Container, SectionTitle, IconWrapper } from './styles';
 
 interface SectionBoxProps {
   title: string;
@@ -22,7 +22,7 @@ const SectionBox: React.FC<SectionBoxProps> = ({
   style,
 }) => {
   const navigation = useNavigation();
-  const {setRepoLink} = useGitHubLink();
+  const { setRepoLink } = useGitHubLink();
 
   const navigateToExample = useCallback(() => {
     navigation.navigate(title);

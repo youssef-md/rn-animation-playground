@@ -1,16 +1,16 @@
-import React, {useEffect} from 'react';
-import {FlatList} from 'react-native';
-import {useTheme} from 'styled-components';
-import {useIsFocused} from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import { FlatList } from 'react-native';
+import { useTheme } from 'styled-components';
+import { useIsFocused } from '@react-navigation/native';
 
 import SectionBox from '../../components/SectionBox';
-import {useGitHubLink} from '../../hooks/githubLink';
-import {sections} from '../../constants';
+import { useGitHubLink } from '../../hooks/githubLink';
+import { sections } from '../../constants';
 
 const Home: React.FC = () => {
-  const {backgroundColor} = useTheme();
+  const { backgroundColor } = useTheme();
   const isFocused = useIsFocused();
-  const {setRepoLink} = useGitHubLink();
+  const { setRepoLink } = useGitHubLink();
 
   useEffect(() => {
     if (isFocused) {
@@ -27,9 +27,9 @@ const Home: React.FC = () => {
         paddingTop: 8,
         backgroundColor,
       }}
-      columnWrapperStyle={{justifyContent: 'space-between'}}
-      keyExtractor={({title}) => title}
-      renderItem={({item: {title, color, githubLink, icon}}) => (
+      columnWrapperStyle={{ justifyContent: 'space-between' }}
+      keyExtractor={({ title }) => title}
+      renderItem={({ item: { title, color, githubLink, icon } }) => (
         <SectionBox
           title={title}
           color={color}

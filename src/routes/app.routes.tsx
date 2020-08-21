@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Header from '../components/Header';
 import Home from '../screens/Home';
@@ -15,11 +15,11 @@ interface AppRoutesProps {
 
 const App = createStackNavigator();
 
-const AppRoutes: React.FC<AppRoutesProps> = ({switchTheme}) => {
+const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
   return (
     <App.Navigator
       screenOptions={{
-        header: ({scene, navigation}) => {
+        header: ({ scene, navigation }) => {
           return (
             <Header
               routeName={scene.route.name}

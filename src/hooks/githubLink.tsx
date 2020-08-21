@@ -1,4 +1,4 @@
-import React, {useState, createContext, useContext} from 'react';
+import React, { useState, createContext, useContext } from 'react';
 
 interface GitHubLinkShape {
   repoLink: string;
@@ -7,13 +7,13 @@ interface GitHubLinkShape {
 
 const GitHubLinkContext = createContext<GitHubLinkShape>({} as GitHubLinkShape);
 
-const GitHubLinkProvider: React.FC = ({children}) => {
+const GitHubLinkProvider: React.FC = ({ children }) => {
   const [repoLink, setRepoLink] = useState(
     'https://github.com/youssef-md/reanimated-playground',
   );
 
   return (
-    <GitHubLinkContext.Provider value={{repoLink, setRepoLink}}>
+    <GitHubLinkContext.Provider value={{ repoLink, setRepoLink }}>
       {children}
     </GitHubLinkContext.Provider>
   );
@@ -31,4 +31,4 @@ function useGitHubLink(): GitHubLinkShape {
   return context;
 }
 
-export {GitHubLinkProvider, useGitHubLink};
+export { GitHubLinkProvider, useGitHubLink };
