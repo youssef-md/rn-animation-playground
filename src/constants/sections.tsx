@@ -5,6 +5,7 @@ import {
   MaterialIcons,
   Feather,
   Octicons,
+  AntDesign,
 } from '@expo/vector-icons';
 
 import { colors } from './colors';
@@ -57,13 +58,13 @@ export const sections = [
     icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
   },
   {
-    title: 'Decay',
+    title: 'Custom Drawer',
     color: colors[5],
     githubLink: 'GitHub Link',
     icon: (
-      <MaterialIcons
+      <MaterialCommunityIcons
         color={colors[5]}
-        name="hdr-strong"
+        name="menu"
         {...defaultIconStyle}
       />
     ),
