@@ -8,7 +8,7 @@ import SkewScroll from '../screens/SkewScroll';
 import AnimatedWallet from '../screens/AnimatedWallet';
 import DotInversion from '../screens/DotInversion';
 import AnimatedAccordion from '../screens/AnimatedAccordion';
-import CustomDrawer from '../screens/CustomDrawer';
+import HeadphoneCarousel from '../screens/HeadphoneCarousel';
 
 interface AppRoutesProps {
   switchTheme: () => void;
@@ -36,7 +36,7 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
       <App.Screen name="Animated Wallet" component={AnimatedWallet} />
       <App.Screen name="Dot Inversion" component={DotInversion} />
       <App.Screen name="Animated Accordion" component={AnimatedAccordion} />
-      <App.Screen name="Custom Drawer" component={CustomDrawer} />
+      <App.Screen name="Headphone Carousel" component={HeadphoneCarousel} />
     </App.Navigator>
   );
 };

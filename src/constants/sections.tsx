@@ -2,10 +2,9 @@ import React from 'react';
 import {
   MaterialCommunityIcons,
   Entypo,
-  MaterialIcons,
   Feather,
   Octicons,
-  AntDesign,
+  Ionicons,
 } from '@expo/vector-icons';
 
 import { colors } from './colors';
@@ -58,15 +57,11 @@ export const sections = [
     icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
   },
   {
-    title: 'Custom Drawer',
+    title: 'Headphone Carousel',
     color: colors[5],
     githubLink: 'GitHub Link',
     icon: (
-      <MaterialCommunityIcons
-        color={colors[5]}
-        name="menu"
-        {...defaultIconStyle}
-      />
+      <Ionicons color={colors[5]} name="md-headset" {...defaultIconStyle} />
     ),
   },
   {
