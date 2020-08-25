@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { FlatList, Animated } from 'react-native';
+import { Animated } from 'react-native';
 
 import { Container } from './styles';
 import { headphones } from './data';

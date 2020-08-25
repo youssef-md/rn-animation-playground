@@ -33,6 +33,22 @@ const Item: React.FC<ItemProps> = ({ index, heading, imageUri, scrollX }) => {
     outputRange: [0, 1, 0],
   });
 
+  // Both outputRange for the Text are inverted due to the nature of scroll
+  const translateXHeading = scrollX.interpolate({
+    inputRange,
+    outputRange: [-deviceWidth * 0.2, 0, deviceWidth * 0.2],
+  });
+
+  const translateXDesc = scrollX.interpolate({
+    inputRange,
+    outputRange: [deviceWidth * 0.6, 0, -deviceWidth * 0.6],
+  });
+
+  const opacityHeading = scrollX.interpolate({
+    inputRange,
+    outputRange: [0, 1, 0],
+  });
+
   return (
     <Container>
       <ProductImage
@@ -42,11 +58,20 @@ const Item: React.FC<ItemProps> = ({ index, heading, imageUri, scrollX }) => {
         resizeMode="contain"
       />
       <ProductInfo>
-        <Heading>
+        <Heading
+          as={Animated.View}
+          style={{
+            opacity: opacityHeading,
+            transform: [{ translateX: translateXHeading }],
+          }}>
           <HeadingLine />
           <HeadingText>{heading}</HeadingText>
         </Heading>
-        <Description>
+        <Description
+          as={Animated.Text}
+          style={{
+            transform: [{ translateX: translateXDesc }],
+          }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
           condimentum metus eget velit tempor accumsan
         </Description>
