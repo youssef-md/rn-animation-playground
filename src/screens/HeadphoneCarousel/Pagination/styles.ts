@@ -14,8 +14,8 @@ interface CircleProps {
 }
 export const Circle = styled.View<CircleProps>`
   background: ${(props) => props.color};
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 10px;
-  margin-left: 12px;
+  margin-left: 18px;
 `;
