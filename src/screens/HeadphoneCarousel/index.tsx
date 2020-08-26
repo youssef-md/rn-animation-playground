@@ -30,7 +30,7 @@ const HeadphoneCarousel: React.FC = () => {
         showsHorizontalScrollIndicator={false}
       />
       <Ticker data={headphones} scrollX={scrollX} />
-      <Pagination data={headphones} />
+      <Pagination scrollX={scrollX} data={headphones} />
     </Container>
   );
 };

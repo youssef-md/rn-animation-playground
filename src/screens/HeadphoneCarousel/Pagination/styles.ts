@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
+import { transparentize } from 'polished';
 
 import { deviceHeight } from '../../../constants';
+
+export const DOT_SIZE = 18;
+export const DOT_MARGIN = 18;
 
 export const Container = styled.View`
   position: absolute;
@@ -9,13 +13,24 @@ export const Container = styled.View`
   flex-direction: row;
 `;
 
-interface CircleProps {
+interface DotProps {
   color: string;
 }
-export const Circle = styled.View<CircleProps>`
+export const Dot = styled.View<DotProps>`
   background: ${(props) => props.color};
-  width: 18px;
-  height: 18px;
-  border-radius: 10px;
+  width: ${DOT_SIZE}px;
+  height: ${DOT_SIZE}px;
+  border-radius: ${DOT_SIZE / 2}px;
   margin-left: 18px;
+`;
+
+export const Indicator = styled.View`
+  position: absolute;
+  left: 9px;
+  top: -9px;
+  width: ${DOT_SIZE * 2}px;
+  height: ${DOT_SIZE * 2}px;
+  border-radius: ${DOT_SIZE * 2}px;
+  border: 1px;
+  border-color: ${(props) => transparentize(0.7, props.theme.fontColor)};
 `;
