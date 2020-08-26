@@ -14,9 +14,10 @@ import {
 } from './styles';
 
 interface ItemProps {
+  index: number;
   imageUri: string;
   heading: string;
-  index: number;
+  color: string;
   scrollX: Animated.Value;
 }
 
@@ -33,7 +34,7 @@ const Item: React.FC<ItemProps> = ({ index, heading, imageUri, scrollX }) => {
     outputRange: [0, 1, 0],
   });
 
-  // Both outputRange for the Text are inverted due to the nature of scroll
+  // outputRange is inverted due to the nature of scroll
   const translateXHeading = scrollX.interpolate({
     inputRange,
     outputRange: [-deviceWidth * 0.2, 0, deviceWidth * 0.2],
@@ -57,6 +58,7 @@ const Item: React.FC<ItemProps> = ({ index, heading, imageUri, scrollX }) => {
         source={imageUri}
         resizeMode="contain"
       />
+
       <ProductInfo>
         <Heading
           as={Animated.View}
