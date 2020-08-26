@@ -12,12 +12,13 @@ export const Container = styled.View`
 
 export const ProductImage = styled.Image`
   width: ${deviceWidth * 0.8}px;
-  flex: 1.05;
+  flex: 1.3;
 `;
 
 export const ProductInfo = styled.View`
   width: ${deviceWidth * 0.8}px;
   flex: 1;
+  margin-top: -70px;
 `;
 
 export const Heading = styled.View`
@@ -30,14 +31,13 @@ export const HeadingLine = styled.View`
   width: 40px;
   height: 1.5px;
   background: ${(props) => transparentize(0.35, props.theme.fontColor)};
-  margin-right: 4px;
+  margin-right: 8px;
 `;
 
 export const HeadingText = styled.Text`
   flex: 1;
   font-size: 24px;
   font-weight: bold;
-  text-transform: uppercase;
   color: ${(props) => props.theme.fontColor};
 `;
 

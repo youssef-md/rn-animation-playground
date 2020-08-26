@@ -4,7 +4,7 @@ import { deviceHeight } from '../../../constants';
 
 export const Container = styled.View`
   position: absolute;
-  bottom: ${deviceHeight * 0.08}px;
+  bottom: ${deviceHeight * 0.06}px;
   right: 20px;
   flex-direction: row;
 `;

@@ -5,6 +5,7 @@ import { Container } from './styles';
 import { headphones } from './data';
 import Item from './Item';
 import Pagination from './Pagination';
+import Ticker from './Ticker';
 
 const HeadphoneCarousel: React.FC = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -26,6 +27,7 @@ const HeadphoneCarousel: React.FC = () => {
         horizontal
         showsHorizontalScrollIndicator={false}
       />
+      <Ticker data={headphones} scrollX={scrollX} />
       <Pagination data={headphones} />
     </Container>
   );
