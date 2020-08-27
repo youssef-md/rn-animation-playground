@@ -1,3 +1,5 @@
+// Inspiration: https://dribbble.com/shots/3894781-Urbanears-Headphones
+
 import React, { useRef } from 'react';
 import { Animated } from 'react-native';
 

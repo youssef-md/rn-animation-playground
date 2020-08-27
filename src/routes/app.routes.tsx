@@ -9,6 +9,7 @@ import AnimatedWallet from '../screens/AnimatedWallet';
 import DotInversion from '../screens/DotInversion';
 import AnimatedAccordion from '../screens/AnimatedAccordion';
 import HeadphoneCarousel from '../screens/HeadphoneCarousel';
+import MoviesCarousel from '../screens/MoviesCarousel';
 
 interface AppRoutesProps {
   switchTheme: () => void;
@@ -37,6 +38,7 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
       <App.Screen name="Dot Inversion" component={DotInversion} />
       <App.Screen name="Animated Accordion" component={AnimatedAccordion} />
       <App.Screen name="Headphone Carousel" component={HeadphoneCarousel} />
+      <App.Screen name="Movies Carousel" component={MoviesCarousel} />
     </App.Navigator>
   );
 };

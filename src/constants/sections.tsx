@@ -65,37 +65,13 @@ export const sections = [
     ),
   },
   {
-    title: 'Spring',
+    title: 'Movies Carousel',
     color: colors[6],
     githubLink: 'GitHub Link',
-    icon: <Entypo color={colors[6]} name="air" {...defaultIconStyle} />,
-  },
-  {
-    title: 'Swiping',
-    color: colors[7],
-    githubLink: 'GitHub Link',
     icon: (
       <MaterialCommunityIcons
-        color={colors[7]}
-        name="gesture-swipe-horizontal"
-        {...defaultIconStyle}
-      />
-    ),
-  },
-  {
-    title: 'Dynamic Springs',
-    color: colors[8],
-    githubLink: 'GitHub Link',
-    icon: <Entypo color={colors[8]} name="air" {...defaultIconStyle} />,
-  },
-  {
-    title: 'Drag to Sort',
-    color: colors[9],
-    githubLink: 'GitHub Link',
-    icon: (
-      <MaterialCommunityIcons
-        color={colors[9]}
-        name="sort-descending"
+        color={colors[6]}
+        name="movie-open-outline"
         {...defaultIconStyle}
       />
     ),

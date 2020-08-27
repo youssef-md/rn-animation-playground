@@ -1,3 +1,5 @@
+// Inspiration: https://interfacemarket.com/ui-kits/boston-grocery-delivery-app-ui-kit
+
 import React, { useState, useRef, useCallback } from 'react';
 import { Transition, Transitioning } from 'react-native-reanimated';
 import { Entypo } from '@expo/vector-icons';
