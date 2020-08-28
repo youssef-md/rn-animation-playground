@@ -1,15 +1,36 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { useMemo } from 'react';
+import { AntDesign } from '@expo/vector-icons';
 
-import { Container, MoviePoster, MovieTitle } from './styles';
+import {
+  Container,
+  MoviePoster,
+  MovieTitle,
+  Genres,
+  Genre,
+  Star,
+  Stars,
+  Rating,
+} from './styles';
 
 const Item: React.FC = ({ title, poster, rating, genres }) => {
+  const stars = useMemo(() => {
+    return [...Array(rating).fill('star'), ...Array(5 - rating).fill('staro')];
+  }, [rating]);
+
   return (
     <Container>
       <MoviePoster source={poster} resizeMode="contain" />
       <MovieTitle>{title}</MovieTitle>
-      <Text>Genres</Text>
-      <Text>Rating</Text>
+      <Genres>
+        {genres.map((genre) => (
+          <Genre key={genre}>{genre}</Genre>
+        ))}
+      </Genres>
+      <Stars>
+        {stars.map((type, index) => (
+          <Star key={index} name={type} size={20} />
+        ))}
+      </Stars>
     </Container>
   );
 };
