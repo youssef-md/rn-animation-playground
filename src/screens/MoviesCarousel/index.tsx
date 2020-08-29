@@ -10,7 +10,7 @@ import { movies } from './data';
 import Item from './Item';
 import { ITEM_WIDTH } from './Item/styles';
 import Backdrop from './Backdrop';
-const SPACER_WIDTH = (deviceWidth - ITEM_WIDTH - 5) / 2;
+const SPACER_WIDTH = (deviceWidth - ITEM_WIDTH - 12) / 2;
 
 const MoviesCarousel: React.FC = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -36,7 +36,7 @@ const MoviesCarousel: React.FC = () => {
 
           const translateY = scrollX.interpolate({
             inputRange,
-            outputRange: [0, -50, 0],
+            outputRange: [10, -70, 10],
           });
 
           return (

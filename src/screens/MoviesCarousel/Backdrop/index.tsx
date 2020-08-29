@@ -1,7 +1,5 @@
 import React from 'react';
-import { Animated, View, StyleSheet } from 'react-native';
-import MaskedView from '@react-native-community/masked-view';
-import Svg, { Rect } from 'react-native-svg';
+import { Animated } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
 import { Movie } from '../data';
@@ -14,8 +12,6 @@ interface BackdropProps {
   movies: Movie[];
   scrollX: Animated.Value;
 }
-
-const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 
 const Backdrop: React.FC<BackdropProps> = ({ movies, scrollX }) => {
   return (
@@ -35,32 +31,12 @@ const Backdrop: React.FC<BackdropProps> = ({ movies, scrollX }) => {
           });
 
           return (
-            <MaskedView
-              style={{
-                position: 'absolute',
-                width: deviceWidth,
-                height: deviceHeight,
-              }}
-              maskElement={
-                <AnimatedSvg
-                  width={deviceWidth}
-                  height={deviceHeight}
-                  viewBox={`0 0 ${deviceWidth} ${deviceHeight}`}
-                  style={{
-                    backgroundColor: 'transparent',
-                    transform: [{ translateX }],
-                  }}>
-                  <Rect
-                    x="0"
-                    y="0"
-                    width={deviceWidth}
-                    height={deviceHeight}
-                    fill="red"
-                  />
-                </AnimatedSvg>
-              }>
-              <Poster source={item.poster} resizeMode="cover" />
-            </MaskedView>
+            <Poster
+              as={Animated.Image}
+              source={item.poster}
+              resizeMode="cover"
+              style={{ transform: [{ translateX }] }}
+            />
           );
         }}
       />

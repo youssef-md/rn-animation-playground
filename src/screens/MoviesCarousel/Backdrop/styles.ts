@@ -14,6 +14,7 @@ export const Container = styled.View`
 export const Poster = styled.Image`
   width: ${deviceWidth}px;
   height: ${BACKDROP_HEIGHT}px;
+  position: absolute;
 `;
 
 export const BottomGradient = styled(LinearGradient).attrs((props) => ({
