@@ -7,10 +7,16 @@ export interface Movie {
 
 export const movies: Movie[] = [
   {
-    title: 'Avengers End Game',
-    poster: require('../../../assets/poster-endgame.jpg'),
+    title: 'Black Panther',
+    poster: require('../../../assets/poster-blackpanther.jpg'),
     rating: 5,
-    genres: ['Adventure', 'Drama', 'Sci-Fi'],
+    genres: ['Action', 'Adventure', 'Sci-Fi'],
+  },
+  {
+    title: 'Fight Club',
+    poster: require('../../../assets/poster-fightclub.jpg'),
+    rating: 5,
+    genres: ['Drama', 'Suspense'],
   },
   {
     title: 'Joker',
@@ -21,7 +27,13 @@ export const movies: Movie[] = [
   {
     title: 'Interstellar',
     poster: require('../../../assets/poster-interstellar.jpg'),
-    rating: 5,
+    rating: 4,
     genres: ['Adventure', 'Sci-Fi', 'Thriller'],
+  },
+  {
+    title: 'Avengers End Game',
+    poster: require('../../../assets/poster-endgame.jpg'),
+    rating: 5,
+    genres: ['Adventure', 'Drama', 'Sci-Fi'],
   },
 ];

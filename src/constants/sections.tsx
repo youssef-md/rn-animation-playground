@@ -57,6 +57,14 @@ export const sections = [
     icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
   },
   {
+    title: 'Headphone Carousel',
+    color: colors[5],
+    githubLink: 'GitHub Link',
+    icon: (
+      <Ionicons color={colors[5]} name="md-headset" {...defaultIconStyle} />
+    ),
+  },
+  {
     title: 'Movies Carousel',
     color: colors[6],
     githubLink: 'GitHub Link',
@@ -66,14 +74,6 @@ export const sections = [
         name="movie-open-outline"
         {...defaultIconStyle}
       />
-    ),
-  },
-  {
-    title: 'Headphone Carousel',
-    color: colors[5],
-    githubLink: 'GitHub Link',
-    icon: (
-      <Ionicons color={colors[5]} name="md-headset" {...defaultIconStyle} />
     ),
   },
 ];

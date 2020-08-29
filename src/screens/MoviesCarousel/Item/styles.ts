@@ -9,8 +9,7 @@ export const ITEM_WIDTH = deviceWidth * 0.7;
 export const Container = styled.View`
   background: ${(props) => props.theme.cardBackgroundColor};
   align-self: flex-end;
-  margin-right: 6px;
-  padding: 30px 0 30px 0px;
+  padding: 28px 0 30px 0px;
   border-radius: 35px;
   align-items: center;
   justify-content: flex-start;

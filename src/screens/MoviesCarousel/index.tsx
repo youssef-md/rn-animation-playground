@@ -5,12 +5,12 @@ import { Animated, View } from 'react-native';
 
 import { deviceWidth } from '../../constants';
 
-import { Container } from './styles';
+import { Container, CTAButton, CTAText } from './styles';
 import { movies } from './data';
 import Item from './Item';
 import { ITEM_WIDTH } from './Item/styles';
 import Backdrop from './Backdrop';
-const SPACER_WIDTH = (deviceWidth - ITEM_WIDTH - 12) / 2;
+const SPACER_WIDTH = (deviceWidth - ITEM_WIDTH) / 2;
 
 const MoviesCarousel: React.FC = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -36,14 +36,19 @@ const MoviesCarousel: React.FC = () => {
 
           const translateY = scrollX.interpolate({
             inputRange,
-            outputRange: [10, -70, 10],
+            outputRange: [10, -80, 10],
+          });
+
+          const opacity = scrollX.interpolate({
+            inputRange,
+            outputRange: [0.3, 1, 0.3],
           });
 
           return (
             <Item
               {...item}
               index={index}
-              style={{ transform: [{ translateY }] }}
+              style={{ opacity, transform: [{ translateY }] }}
             />
           );
         }}
@@ -59,6 +64,10 @@ const MoviesCarousel: React.FC = () => {
           { useNativeDriver: true },
         )}
       />
+
+      <CTAButton>
+        <CTAText>Buy Ticket</CTAText>
+      </CTAButton>
     </Container>
   );
 };
