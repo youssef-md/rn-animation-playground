@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { AntDesign } from '@expo/vector-icons';
+import { Animated } from 'react-native';
 
 import {
   Container,
@@ -9,16 +9,15 @@ import {
   Genre,
   Star,
   Stars,
-  Rating,
 } from './styles';
 
-const Item: React.FC = ({ title, poster, rating, genres }) => {
+const Item: React.FC = ({ title, poster, rating, genres, style }) => {
   const stars = useMemo(() => {
     return [...Array(rating).fill('star'), ...Array(5 - rating).fill('staro')];
   }, [rating]);
 
   return (
-    <Container>
+    <Container as={Animated.View} style={style}>
       <MoviePoster source={poster} resizeMode="contain" />
       <MovieTitle>{title}</MovieTitle>
       <Genres>

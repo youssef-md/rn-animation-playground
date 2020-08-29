@@ -19,12 +19,6 @@ export const movies: Movie[] = [
     genres: ['Crime', 'Drama', 'Thriller'],
   },
   {
-    title: 'Donnie Darko',
-    poster: require('../../../assets/poster-donnie.jpg'),
-    rating: 5,
-    genres: ['Mystery', 'Sci-Fi', 'Thriller'],
-  },
-  {
     title: 'Interstellar',
     poster: require('../../../assets/interstellar.jpg'),
     rating: 5,

@@ -4,27 +4,29 @@ import { AntDesign } from '@expo/vector-icons';
 
 import { deviceWidth } from '../../../constants';
 
+export const ITEM_WIDTH = deviceWidth * 0.73;
+
 export const Container = styled.View`
   background: ${(props) => props.theme.cardBackgroundColor};
   align-self: flex-end;
-  margin: 0 20px;
-  padding: 35px 0 20px 0px;
-  elevation: 1;
-  border-top-right-radius: 35px;
-  border-top-left-radius: 35px;
+  margin-left: 15px;
+  padding: 35px 0 30px 0px;
+  elevation: 2;
+  border-radius: 35px;
   align-items: center;
   justify-content: flex-start;
-  width: ${deviceWidth * 0.75}px;
+  width: ${ITEM_WIDTH}px;
 `;
 
 export const MoviePoster = styled.Image`
-  height: 320px;
+  height: 280px;
   border-radius: 35px;
 `;
 
 export const MovieTitle = styled.Text`
   font-size: 21px;
   font-weight: bold;
+  color: ${(props) => props.theme.fontColor};
   margin: 14px 0;
   letter-spacing: -0.5px;
 `;
@@ -37,10 +39,10 @@ export const Genres = styled.View`
 export const Genre = styled.Text`
   font-size: 12px;
   padding: 4px 12px;
-  color: ${(props) => transparentize(0.5, props.theme.fontColor)};
+  color: ${(props) => transparentize(0.4, props.theme.fontColor)};
   border-radius: 20px;
   border: 1px;
-  border-color: ${(props) => transparentize(0.5, props.theme.fontColor)};
+  border-color: ${(props) => transparentize(0.4, props.theme.fontColor)};
   margin: 0 4px;
 `;
 
@@ -51,6 +53,6 @@ export const Stars = styled.View`
 `;
 
 export const Star = styled(AntDesign)`
-  color: #d4af37;
+  color: orange;
   margin: 0 2px;
 `;
