@@ -10,7 +10,7 @@ import { movies } from './data';
 import Item from './Item';
 import { ITEM_WIDTH } from './Item/styles';
 import Backdrop from './Backdrop';
-const SPACER_WIDTH = (deviceWidth - ITEM_WIDTH - 60) / 2;
+const SPACER_WIDTH = (deviceWidth - ITEM_WIDTH - 5) / 2;
 
 const MoviesCarousel: React.FC = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -51,7 +51,8 @@ const MoviesCarousel: React.FC = () => {
         contentContainerStyle={{ paddingHorizontal: SPACER_WIDTH }}
         showsHorizontalScrollIndicator={false}
         snapToInterval={ITEM_WIDTH}
-        decelerationRate={0}
+        snapToAlignment="start"
+        decelerationRate={0.2}
         scrollEventThrottle={16}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],

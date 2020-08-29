@@ -4,13 +4,13 @@ import { AntDesign } from '@expo/vector-icons';
 
 import { deviceWidth } from '../../../constants';
 
-export const ITEM_WIDTH = deviceWidth * 0.73;
+export const ITEM_WIDTH = deviceWidth * 0.7;
 
 export const Container = styled.View`
   background: ${(props) => props.theme.cardBackgroundColor};
   align-self: flex-end;
-  margin-left: 15px;
-  padding: 35px 0 30px 0px;
+  margin-left: 5px;
+  padding: 30px 0 30px 0px;
   border-radius: 35px;
   align-items: center;
   justify-content: flex-start;

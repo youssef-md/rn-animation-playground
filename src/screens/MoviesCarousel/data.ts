@@ -18,9 +18,10 @@ export const movies: Movie[] = [
     rating: 4,
     genres: ['Crime', 'Drama', 'Thriller'],
   },
+
   {
     title: 'Interstellar',
-    poster: require('../../../assets/interstellar.jpg'),
+    poster: require('../../../assets/poster-interstellar.jpg'),
     rating: 5,
     genres: ['Adventure', 'Sci-Fi', 'Thriller'],
   },

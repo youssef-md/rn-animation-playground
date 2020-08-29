@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Animated, ViewStyle, ImageSourcePropType } from 'react-native';
 
 import {
