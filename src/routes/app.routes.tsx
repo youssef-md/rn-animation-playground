@@ -37,8 +37,8 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
       <App.Screen name="Animated Wallet" component={AnimatedWallet} />
       <App.Screen name="Dot Inversion" component={DotInversion} />
       <App.Screen name="Animated Accordion" component={AnimatedAccordion} />
-      <App.Screen name="Headphone Carousel" component={HeadphoneCarousel} />
       <App.Screen name="Movies Carousel" component={MoviesCarousel} />
+      <App.Screen name="Headphone Carousel" component={HeadphoneCarousel} />
     </App.Navigator>
   );
 };

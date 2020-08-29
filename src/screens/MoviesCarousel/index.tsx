@@ -9,6 +9,7 @@ import { Container } from './styles';
 import { movies } from './data';
 import Item from './Item';
 import { ITEM_WIDTH } from './Item/styles';
+import Backdrop from './Backdrop';
 const SPACER_WIDTH = (deviceWidth - ITEM_WIDTH - 60) / 2;
 
 const MoviesCarousel: React.FC = () => {
@@ -16,6 +17,7 @@ const MoviesCarousel: React.FC = () => {
 
   return (
     <Container>
+      <Backdrop movies={movies} scrollX={scrollX} />
       <Animated.FlatList
         data={movies}
         keyExtractor={({ title }) => title}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated } from 'react-native';
+import { Animated, ImageSourcePropType } from 'react-native';
 
 import { deviceWidth } from '../../../constants';
 
@@ -15,7 +15,7 @@ import {
 
 interface ItemProps {
   index: number;
-  imageUri: string;
+  imageUri: ImageSourcePropType;
   heading: string;
   color: string;
   scrollX: Animated.Value;

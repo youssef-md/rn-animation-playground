@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Animated } from 'react-native';
+import { Animated, ViewStyle, ImageSourcePropType } from 'react-native';
 
 import {
   Container,
@@ -11,10 +11,25 @@ import {
   Stars,
 } from './styles';
 
-const Item: React.FC = ({ title, poster, rating, genres, style }) => {
-  const stars = useMemo(() => {
-    return [...Array(rating).fill('star'), ...Array(5 - rating).fill('staro')];
-  }, [rating]);
+interface ItemProps {
+  title: string;
+  poster: ImageSourcePropType;
+  rating: number;
+  genres: string[];
+  style: ViewStyle;
+}
+
+const Item: React.FC<ItemProps> = ({
+  title,
+  poster,
+  rating,
+  genres,
+  style,
+}) => {
+  const stars = [
+    ...Array(rating).fill('star'),
+    ...Array(5 - rating).fill('staro'),
+  ];
 
   return (
     <Container as={Animated.View} style={style}>

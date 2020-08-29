@@ -11,7 +11,6 @@ export const Container = styled.View`
   align-self: flex-end;
   margin-left: 15px;
   padding: 35px 0 30px 0px;
-  elevation: 2;
   border-radius: 35px;
   align-items: center;
   justify-content: flex-start;
