@@ -5,6 +5,7 @@ import {
   Feather,
   Octicons,
   Ionicons,
+  SimpleLineIcons,
 } from '@expo/vector-icons';
 
 import { colors } from './colors';
@@ -57,20 +58,28 @@ export const sections = [
     icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
   },
   {
-    title: 'Headphone Carousel',
+    title: 'Tinder Cards',
     color: colors[5],
     githubLink: 'GitHub Link',
     icon: (
-      <Ionicons color={colors[5]} name="md-headset" {...defaultIconStyle} />
+      <SimpleLineIcons color={colors[5]} name="fire" {...defaultIconStyle} />
+    ),
+  },
+  {
+    title: 'Headphone Carousel',
+    color: colors[6],
+    githubLink: 'GitHub Link',
+    icon: (
+      <Ionicons color={colors[6]} name="md-headset" {...defaultIconStyle} />
     ),
   },
   {
     title: 'Movies Carousel',
-    color: colors[6],
+    color: colors[7],
     githubLink: 'GitHub Link',
     icon: (
       <MaterialCommunityIcons
-        color={colors[6]}
+        color={colors[7]}
         name="movie-open-outline"
         {...defaultIconStyle}
       />
