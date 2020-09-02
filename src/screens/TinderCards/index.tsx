@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useMemo } from 'react';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import { Animated, PanResponder } from 'react-native';
 
@@ -11,20 +11,33 @@ import {
   Footer,
   RoundButton,
   CARD_WIDTH,
+  CARD_HEIGHT,
 } from './styles';
 import { movies } from './data';
 
 const TinderCards: React.FC = () => {
   const swipe = useRef(new Animated.ValueXY()).current;
   const [items, setItems] = useState(movies);
+  const [tiltDirection, setTiltDirection] = useState(1);
+  // let tiltDirection = useRef(20).current;
 
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
-      onPanResponderMove: Animated.event([null, { dx: swipe.x, dy: swipe.y }], {
-        useNativeDriver: false,
-      }),
-      onPanResponderRelease: (e, { dx, dy }) => {
+      onPanResponderMove: (e, gesture) => {
+        const { dx, dy, y0 } = gesture;
+        // console.log({ gesture });
+        // tiltDirection = y0 > CARD_HEIGHT / 2 ? 20 : -20;
+        setTiltDirection(y0 > CARD_HEIGHT / 2 ? 20 : -20);
+        // console.log({ cardTiltDirection });
+        // Animated.event([null, { dx: swipe.x, dy: swipe.y }], {
+        //   useNativeDriver: true,
+        // });
+        swipe.setValue({ x: dx, y: dy });
+      },
+      onPanResponderRelease: (e, gesture) => {
+        const { dx, dy } = gesture;
+        // console.log({ gesture });
         const direction = dx >= 0 ? 1 : -1;
 
         if (Math.abs(dx) > 90) {
@@ -34,9 +47,9 @@ const TinderCards: React.FC = () => {
             useNativeDriver: true,
           }).start(transitionNext);
         } else {
-          Animated.spring(swipe, {
+          Animated.timing(swipe, {
             toValue: { x: 0, y: 0 },
-            friction: 5,
+            duration: 200,
             useNativeDriver: true,
           }).start();
         }
@@ -53,7 +66,8 @@ const TinderCards: React.FC = () => {
 
   const rotate = swipe.x.interpolate({
     inputRange: [-200, 0, 200],
-    outputRange: ['20deg', '0deg', '-20deg'],
+    outputRange: [`${tiltDirection}deg`, '0deg', `${tiltDirection * -1}deg`],
+    // outputRange: ['20deg', '0deg', '-20deg'],
     extrapolate: 'clamp',
   });
 

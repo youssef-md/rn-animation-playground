@@ -20,6 +20,12 @@ export const sections = [
     icon: <Feather color={colors[0]} name="layout" {...defaultIconStyle} />,
   },
   {
+    title: 'Animated Accordion',
+    color: colors[4],
+    githubLink: 'GitHub Link',
+    icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
+  },
+  {
     title: 'Skew Scroll',
     color: colors[1],
     githubLink: 'GitHub Link',
@@ -51,12 +57,7 @@ export const sections = [
       <Octicons color={colors[3]} name="primitive-dot" {...defaultIconStyle} />
     ),
   },
-  {
-    title: 'Animated Accordion',
-    color: colors[4],
-    githubLink: 'GitHub Link',
-    icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
-  },
+
   {
     title: 'Tinder Cards',
     color: colors[5],

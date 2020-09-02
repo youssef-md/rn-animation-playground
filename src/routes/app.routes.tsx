@@ -33,11 +33,11 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
         },
       }}>
       <App.Screen name="Animation Playground" component={Home} />
+      <App.Screen name="Animated Accordion" component={AnimatedAccordion} />
       <App.Screen name="Animated Layout" component={AnimatedLayout} />
       <App.Screen name="Skew Scroll" component={SkewScroll} />
       <App.Screen name="Animated Wallet" component={AnimatedWallet} />
       <App.Screen name="Dot Inversion" component={DotInversion} />
-      <App.Screen name="Animated Accordion" component={AnimatedAccordion} />
       <App.Screen name="Tinder Cards" component={TinderCards} />
       <App.Screen name="Headphone Carousel" component={HeadphoneCarousel} />
       <App.Screen name="Movies Carousel" component={MoviesCarousel} />

@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import { deviceWidth, deviceHeight } from '../../constants';
 
 export const CARD_WIDTH = deviceWidth * 0.9;
+export const CARD_HEIGHT = deviceHeight * 0.7;
 
 export const Container = styled.View`
   flex: 1;
@@ -12,7 +13,7 @@ export const Container = styled.View`
 
 export const Card = styled.View`
   width: ${CARD_WIDTH}px;
-  height: ${deviceHeight * 0.7}px;
+  height: ${CARD_HEIGHT}px;
   border-radius: 8px;
   elevation: 6;
   position: absolute;
