@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import { deviceWidth } from '../../constants';
+import { deviceWidth, deviceHeight } from '../../constants';
 
 export const Container = styled.View`
   flex: 1;
@@ -10,9 +10,11 @@ export const Container = styled.View`
 
 export const Card = styled.View`
   width: ${deviceWidth * 0.9}px;
-  flex: 1;
+  height: ${deviceHeight * 0.7}px;
   border-radius: 8px;
   elevation: 6;
+  position: absolute;
+  top: 8px;
 `;
 
 export const CardImage = styled.Image`
@@ -27,6 +29,8 @@ export const Footer = styled.View`
   align-items: center;
   justify-content: space-evenly;
   width: 280px;
+  position: absolute;
+  bottom: 4px;
 `;
 
 export const RoundButton = styled.TouchableOpacity.attrs({

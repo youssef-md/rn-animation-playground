@@ -1,43 +1,48 @@
 import React, { useRef } from 'react';
 import { AntDesign, Entypo } from '@expo/vector-icons';
-import { PanGestureHandler } from 'react-native-gesture-handler';
-import { Animated } from 'react-native';
+import { Animated, PanResponder, Text } from 'react-native';
 
 import { Container, Card, CardImage, Footer, RoundButton } from './styles';
 import { movies } from './data';
 
 const TinderCards: React.FC = () => {
-  const translate = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
-  const animatedEvent = Animated.event(
-    [
-      {
-        nativeEvent: {
-          translationX: translate.x,
-          translationY: translate.y,
-        },
-      },
-    ],
-    { useNativeDriver: true },
-  );
+  const swipe = useRef(new Animated.ValueXY()).current;
+  const panResponder = useRef(
+    PanResponder.create({
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderMove: Animated.event([null, { dx: swipe.x, dy: swipe.y }], {
+        useNativeDriver: false,
+      }),
+    }),
+  ).current;
 
-  function onHandlerStateChanged(event) {}
+  const rotate = swipe.x.interpolate({
+    inputRange: [-200, 0, 200],
+    outputRange: ['20deg', '0deg', '-20deg'],
+  });
+
+  const animatedCardStyle = {
+    transform: [...swipe.getTranslateTransform(), { rotate }],
+  };
 
   return (
     <Container>
-      <PanGestureHandler
-        onGestureEvent={animatedEvent}
-        onHandlerStateChange={onHandlerStateChanged}>
-        <Card
-          as={Animated.View}
-          style={{
-            transform: [
-              { translateX: translate.x },
-              { translateY: translate.y },
-            ],
-          }}>
-          <CardImage source={movies[0].poster} resizeMode="cover" />
-        </Card>
-      </PanGestureHandler>
+      {movies
+        .slice(0, 4)
+        .reverse()
+        .map(({ poster, title }, index) => {
+          const isFirst = index === movies.length - 1;
+          const isSecond = index === movies.length - 2;
+
+          const panHandlers = isFirst ? panResponder.panHandlers : {};
+          const cardStyle = isFirst ? animatedCardStyle : undefined;
+
+          return (
+            <Card as={Animated.View} {...panHandlers} style={cardStyle}>
+              <CardImage source={poster} resizeMode="cover" />
+            </Card>
+          );
+        })}
       <Footer>
         <RoundButton>
           <Entypo name="cross" size={45} color="#f57676" />
