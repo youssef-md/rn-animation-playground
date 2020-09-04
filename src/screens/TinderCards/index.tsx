@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useMemo } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import { Animated, PanResponder } from 'react-native';
 
@@ -15,24 +15,21 @@ import {
 } from './styles';
 import { movies } from './data';
 
+const CARD_OUT_WIDTH = deviceWidth + CARD_WIDTH;
+
 const TinderCards: React.FC = () => {
   const swipe = useRef(new Animated.ValueXY()).current;
   const [items, setItems] = useState(movies);
   const [tiltDirection, setTiltDirection] = useState(1);
-  // let tiltDirection = useRef(20).current;
 
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
       onPanResponderMove: (e, gesture) => {
         const { dx, dy, y0 } = gesture;
-        // console.log({ gesture });
-        // tiltDirection = y0 > CARD_HEIGHT / 2 ? 20 : -20;
-        setTiltDirection(y0 > CARD_HEIGHT / 2 ? 20 : -20);
-        // console.log({ cardTiltDirection });
-        // Animated.event([null, { dx: swipe.x, dy: swipe.y }], {
-        //   useNativeDriver: true,
-        // });
+
+        setTiltDirection(y0 > CARD_HEIGHT / 2 ? 1 : -1);
+
         swipe.setValue({ x: dx, y: dy });
       },
       onPanResponderRelease: (e, gesture) => {
@@ -43,7 +40,7 @@ const TinderCards: React.FC = () => {
         if (Math.abs(dx) > 90) {
           Animated.timing(swipe, {
             duration: 200,
-            toValue: { x: direction * (deviceWidth + CARD_WIDTH), y: dy },
+            toValue: { x: direction * CARD_OUT_WIDTH, y: dy },
             useNativeDriver: true,
           }).start(transitionNext);
         } else {
@@ -59,21 +56,35 @@ const TinderCards: React.FC = () => {
 
   const transitionNext = useCallback(() => {
     setItems(function popTopItem(prevState) {
-      swipe.setValue({ x: 0, y: 0 });
       return prevState.slice(1);
     });
+    swipe.setValue({ x: 0, y: 0 });
   }, [swipe]);
 
   const rotate = swipe.x.interpolate({
     inputRange: [-200, 0, 200],
-    outputRange: [`${tiltDirection}deg`, '0deg', `${tiltDirection * -1}deg`],
-    // outputRange: ['20deg', '0deg', '-20deg'],
+    outputRange: [
+      `${tiltDirection * 20}deg`,
+      '0deg',
+      `${tiltDirection * -1 * 20}deg`,
+    ],
     extrapolate: 'clamp',
   });
 
   const animatedCardStyle = {
     transform: [...swipe.getTranslateTransform(), { rotate }],
   };
+
+  const handleChoise = useCallback(
+    (direction) => {
+      Animated.timing(swipe.x, {
+        duration: 500,
+        toValue: direction * CARD_OUT_WIDTH,
+        useNativeDriver: true,
+      }).start(transitionNext);
+    },
+    [swipe.x, transitionNext],
+  );
 
   return (
     <Container>
@@ -89,7 +100,7 @@ const TinderCards: React.FC = () => {
             transform: [
               {
                 scale: swipe.x.interpolate({
-                  inputRange: [-200, 0, 200],
+                  inputRange: [-100, 0, 100],
                   outputRange: [1, 0.9, 1],
                   extrapolate: 'clamp',
                 }),
@@ -108,10 +119,10 @@ const TinderCards: React.FC = () => {
           );
         })}
       <Footer>
-        <RoundButton>
+        <RoundButton onPress={() => handleChoise(-1)}>
           <Entypo name="cross" size={45} color="#f57676" />
         </RoundButton>
-        <RoundButton>
+        <RoundButton onPress={() => handleChoise(1)}>
           <AntDesign name="heart" size={30} color="#6ad99e" />
         </RoundButton>
       </Footer>
