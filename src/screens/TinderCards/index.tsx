@@ -39,8 +39,6 @@ const TinderCards: React.FC = () => {
         const horizontalAction = Math.abs(dx) > ACTION_OFFSET_HORIZONTAL;
         const verticalAction = dy < -ACTION_OFFSET_VERTICAL;
 
-        console.log({ horizontalAction, verticalAction });
-
         if (horizontalAction || verticalAction) {
           Animated.timing(swipe, {
             duration: 200,

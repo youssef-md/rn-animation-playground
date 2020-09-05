@@ -2,10 +2,10 @@ import React from 'react';
 import {
   MaterialCommunityIcons,
   Entypo,
-  Feather,
   Octicons,
   Ionicons,
   SimpleLineIcons,
+  AntDesign,
 } from '@expo/vector-icons';
 
 import { colors } from './colors';
@@ -14,11 +14,11 @@ const defaultIconStyle = { size: 32 };
 
 export const sections = [
   {
-    title: 'Animated Layout',
+    title: 'Animated Gallery',
     color: colors[0],
     githubLink:
-      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedLayout/index.tsx',
-    icon: <Feather color={colors[0]} name="layout" {...defaultIconStyle} />,
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedGallery/index.tsx  ',
+    icon: <AntDesign color={colors[0]} name="picture" {...defaultIconStyle} />,
   },
   {
     title: 'Animated Accordion',

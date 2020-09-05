@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Header from '../components/Header';
 import Home from '../screens/Home';
-import AnimatedLayout from '../screens/AnimatedLayout';
+import AnimatedGallery from '../screens/AnimatedGallery';
 import SkewScroll from '../screens/SkewScroll';
 import AnimatedWallet from '../screens/AnimatedWallet';
 import DotInversion from '../screens/DotInversion';
@@ -33,10 +33,10 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
           );
         },
       }}>
-      <App.Screen name="GitHub" component={WebView} />
       <App.Screen name="Animation Playground" component={Home} />
+      <App.Screen name="GitHub" component={WebView} />
+      <App.Screen name="Animated Gallery" component={AnimatedGallery} />
       <App.Screen name="Animated Accordion" component={AnimatedAccordion} />
-      <App.Screen name="Animated Layout" component={AnimatedLayout} />
       <App.Screen name="Skew Scroll" component={SkewScroll} />
       <App.Screen name="Animated Wallet" component={AnimatedWallet} />
       <App.Screen name="Dot Inversion" component={DotInversion} />
