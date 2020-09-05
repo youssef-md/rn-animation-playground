@@ -52,38 +52,21 @@ export const Like = styled.View`
   position: absolute;
   top: 60px;
   left: 20px;
-  border-width: 5px;
-  border-color: #6ad99e;
-  padding: 0px 20px;
-  border-radius: 10px;
   transform: rotate(-30deg);
   z-index: 2;
-`;
-
-export const LikeText = styled.Text`
-  font-size: 40px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #6ad99e;
-  letter-spacing: 3px;
 `;
 
 export const Nope = styled.View`
   position: absolute;
   top: 60px;
   right: 20px;
-  z-index: 2;
-  border-width: 5px;
-  border-color: #f57676;
-  padding: 0px 20px;
-  border-radius: 10px;
   transform: rotate(30deg);
+  z-index: 2;
 `;
 
-export const NopeText = styled.Text`
-  font-size: 40px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #f57676;
-  letter-spacing: 3px;
+export const SuperLike = styled.View`
+  position: absolute;
+  bottom: 60px;
+  z-index: 2;
+  left: ${CARD_WIDTH / 5}px;
 `;

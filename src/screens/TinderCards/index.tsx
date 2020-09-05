@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useMemo } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import { Animated, PanResponder } from 'react-native';
 
@@ -12,14 +12,17 @@ import {
   RoundButton,
   CARD_WIDTH,
   Like,
-  LikeText,
   Nope,
-  NopeText,
+  SuperLike,
+  CARD_HEIGHT,
 } from './styles';
 import { movies } from './data';
+import Choise from './Choice';
 
 const CARD_OUT_WIDTH = deviceWidth + CARD_WIDTH;
-const ACTION_OFFSET = 90;
+const CARD_OUT_HEIGHT = -1 * (deviceWidth + CARD_HEIGHT);
+const ACTION_OFFSET_HORIZONTAL = 90;
+const ACTION_OFFSET_VERTICAL = 120;
 
 const TinderCards: React.FC = () => {
   const swipe = useRef(new Animated.ValueXY()).current;
@@ -28,16 +31,23 @@ const TinderCards: React.FC = () => {
   const panResponder = useRef(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
-      onPanResponderMove: Animated.event([null, { dx: swipe.x, dy: swipe.y }], {
-        useNativeDriver: false,
-      }),
-      onPanResponderRelease: (e, { dx, dy }) => {
+      onPanResponderMove: (evt, { dx, dy }) => {
+        swipe.setValue({ x: dx, y: dy });
+      },
+      onPanResponderRelease: (evt, { dx, dy }) => {
         const direction = Math.sign(dx);
+        const horizontalAction = Math.abs(dx) > ACTION_OFFSET_HORIZONTAL;
+        const verticalAction = dy < -ACTION_OFFSET_VERTICAL;
 
-        if (Math.abs(dx) > ACTION_OFFSET) {
+        console.log({ horizontalAction, verticalAction });
+
+        if (horizontalAction || verticalAction) {
           Animated.timing(swipe, {
             duration: 200,
-            toValue: { x: direction * CARD_OUT_WIDTH, y: dy },
+            toValue: {
+              x: horizontalAction ? direction * CARD_OUT_WIDTH : dx,
+              y: verticalAction ? CARD_OUT_HEIGHT : dy,
+            },
             useNativeDriver: true,
           }).start(transitionNext);
         } else {
@@ -65,13 +75,19 @@ const TinderCards: React.FC = () => {
   });
 
   const likeOpacity = swipe.x.interpolate({
-    inputRange: [0, ACTION_OFFSET],
+    inputRange: [0, ACTION_OFFSET_HORIZONTAL],
     outputRange: [0, 1],
     extrapolate: 'clamp',
   });
 
   const nopeOpacity = swipe.x.interpolate({
-    inputRange: [-ACTION_OFFSET, 0],
+    inputRange: [-ACTION_OFFSET_HORIZONTAL, 0],
+    outputRange: [1, 0],
+    extrapolate: 'clamp',
+  });
+
+  const superLikeOpacity = swipe.y.interpolate({
+    inputRange: [-ACTION_OFFSET_VERTICAL, 0],
     outputRange: [1, 0],
     extrapolate: 'clamp',
   });
@@ -82,6 +98,7 @@ const TinderCards: React.FC = () => {
 
   const likeStyle = { opacity: likeOpacity };
   const nopeStyle = { opacity: nopeOpacity };
+  const superLikeStyle = { opacity: superLikeOpacity };
 
   const nextCardStyle = {
     transform: [
@@ -126,11 +143,14 @@ const TinderCards: React.FC = () => {
               {isFirst && (
                 <>
                   <Like as={Animated.View} style={likeStyle}>
-                    <LikeText>Like</LikeText>
+                    <Choise type="like" />
                   </Like>
                   <Nope as={Animated.View} style={nopeStyle}>
-                    <NopeText>Nope</NopeText>
+                    <Choise type="nope" />
                   </Nope>
+                  <SuperLike as={Animated.View} style={superLikeStyle}>
+                    <Choise type="super like" />
+                  </SuperLike>
                 </>
               )}
               <CardImage source={poster} resizeMode="cover" />
