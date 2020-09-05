@@ -31,16 +31,20 @@ export const Footer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  width: 280px;
+  width: 260px;
   position: absolute;
   bottom: 4px;
 `;
 
+interface RoundButtonProps {
+  type?: 'small';
+}
+
 export const RoundButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.65,
-})`
-  width: 60px;
-  height: 60px;
+})<RoundButtonProps>`
+  width: ${(props) => (props.type === 'small' ? 45 : 60)}px;
+  height: ${(props) => (props.type === 'small' ? 45 : 60)}px;
   border-radius: 100px;
   elevation: 2.2;
   justify-content: center;

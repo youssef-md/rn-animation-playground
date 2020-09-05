@@ -100,27 +100,15 @@ const TinderCards: React.FC = () => {
   const nopeStyle = { opacity: nopeOpacity };
   const superLikeStyle = { opacity: superLikeOpacity };
 
-  const nextCardStyle = {
-    transform: [
-      {
-        scale: swipe.x.interpolate({
-          inputRange: [-100, 0, 100],
-          outputRange: [1, 0.95, 1],
-          extrapolate: 'clamp',
-        }),
-      },
-    ],
-  };
-
   const handleChoise = useCallback(
-    (direction) => {
-      Animated.timing(swipe.x, {
+    (direction: 'horizontal' | 'vertical', sign: number) => {
+      Animated.timing(direction === 'horizontal' ? swipe.x : swipe.y, {
         duration: 500,
-        toValue: direction * CARD_OUT_WIDTH,
+        toValue: sign * CARD_OUT_WIDTH,
         useNativeDriver: true,
       }).start(transitionNext);
     },
-    [swipe.x, transitionNext],
+    [swipe, transitionNext],
   );
 
   return (
@@ -139,7 +127,7 @@ const TinderCards: React.FC = () => {
               key={title}
               as={Animated.View}
               {...panHandlers}
-              style={[cardStyle, !isFirst && nextCardStyle]}>
+              style={[cardStyle]}>
               {isFirst && (
                 <>
                   <Like as={Animated.View} style={likeStyle}>
@@ -158,10 +146,13 @@ const TinderCards: React.FC = () => {
           );
         })}
       <Footer>
-        <RoundButton onPress={() => handleChoise(-1)}>
+        <RoundButton onPress={() => handleChoise('horizontal', -1)}>
           <Entypo name="cross" size={45} color="#f57676" />
         </RoundButton>
-        <RoundButton onPress={() => handleChoise(1)}>
+        <RoundButton type="small" onPress={() => handleChoise('vertical', -1)}>
+          <AntDesign name="star" size={20} color="#03c2fc" />
+        </RoundButton>
+        <RoundButton onPress={() => handleChoise('horizontal', 1)}>
           <AntDesign name="heart" size={30} color="#6ad99e" />
         </RoundButton>
       </Footer>
