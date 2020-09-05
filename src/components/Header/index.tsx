@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 
 import RoundButton from '../RoundButton';
-import { useGitHubLink } from '../../hooks/githubLink';
 
 import {
   Container,
@@ -19,8 +19,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ routeName, switchTheme, goBack }) => {
+  const navigation = useNavigation();
   const { type } = useTheme();
-  const { repoLink } = useGitHubLink();
 
   return (
     <Container>
@@ -37,7 +37,10 @@ const Header: React.FC<HeaderProps> = ({ routeName, switchTheme, goBack }) => {
           onPress={switchTheme}
         />
         <Separator />
-        <RoundButton icon="logo-github" onPress={() => alert(repoLink)} />
+        <RoundButton
+          icon="logo-github"
+          onPress={() => navigation.navigate('GitHub')}
+        />
       </RightItems>
     </Container>
   );

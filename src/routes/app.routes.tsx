@@ -11,6 +11,7 @@ import AnimatedAccordion from '../screens/AnimatedAccordion';
 import HeadphoneCarousel from '../screens/HeadphoneCarousel';
 import MoviesCarousel from '../screens/MoviesCarousel';
 import TinderCards from '../screens/TinderCards';
+import WebView from '../screens/WebView';
 
 interface AppRoutesProps {
   switchTheme: () => void;
@@ -32,6 +33,7 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
           );
         },
       }}>
+      <App.Screen name="GitHub" component={WebView} />
       <App.Screen name="Animation Playground" component={Home} />
       <App.Screen name="Animated Accordion" component={AnimatedAccordion} />
       <App.Screen name="Animated Layout" component={AnimatedLayout} />

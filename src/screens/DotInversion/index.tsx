@@ -1,3 +1,5 @@
+// Inspiration: https://dribbble.com/shots/6654320-Animated-Onboarding-Screens
+
 import React, { useState } from 'react';
 import Animated, {
   interpolate,

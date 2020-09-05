@@ -16,19 +16,22 @@ export const sections = [
   {
     title: 'Animated Layout',
     color: colors[0],
-    githubLink: 'GitHub Link',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedLayout/index.tsx',
     icon: <Feather color={colors[0]} name="layout" {...defaultIconStyle} />,
   },
   {
     title: 'Animated Accordion',
     color: colors[4],
-    githubLink: 'GitHub Link',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedAccordion/index.tsx',
     icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
   },
   {
     title: 'Skew Scroll',
     color: colors[1],
-    githubLink: 'GitHub Link',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/SkewScroll/index.tsx',
     icon: (
       <MaterialCommunityIcons
         color={colors[1]}
@@ -40,7 +43,8 @@ export const sections = [
   {
     title: 'Animated Wallet',
     color: colors[2],
-    githubLink: 'GitHub Link',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedWallet/index.tsx',
     icon: (
       <MaterialCommunityIcons
         color={colors[2]}
@@ -52,7 +56,8 @@ export const sections = [
   {
     title: 'Dot Inversion',
     color: colors[3],
-    githubLink: 'GitHub Link',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/DotInversion/index.tsx',
     icon: (
       <Octicons color={colors[3]} name="primitive-dot" {...defaultIconStyle} />
     ),
@@ -61,7 +66,8 @@ export const sections = [
   {
     title: 'Tinder Cards',
     color: colors[5],
-    githubLink: 'GitHub Link',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/TinderCards/index.tsx',
     icon: (
       <SimpleLineIcons color={colors[5]} name="fire" {...defaultIconStyle} />
     ),
@@ -69,7 +75,8 @@ export const sections = [
   {
     title: 'Headphone Carousel',
     color: colors[6],
-    githubLink: 'GitHub Link',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/HeadphoneCarousel/index.tsx',
     icon: (
       <Ionicons color={colors[6]} name="md-headset" {...defaultIconStyle} />
     ),
@@ -77,7 +84,8 @@ export const sections = [
   {
     title: 'Movies Carousel',
     color: colors[7],
-    githubLink: 'GitHub Link',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/MoviesCarousel/index.tsx',
     icon: (
       <MaterialCommunityIcons
         color={colors[7]}
