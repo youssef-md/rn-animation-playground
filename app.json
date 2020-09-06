@@ -22,6 +22,9 @@
     "android": {
       "package": "com.youssef.animationplayground",
       "versionCode": 1
+    },
+    "androidStatusBar": {
+      "hidden": true
     }
   }
 }
