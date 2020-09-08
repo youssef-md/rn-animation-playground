@@ -1,24 +1,27 @@
 {
   "expo": {
-    "name": "animated-playground",
-    "slug": "animated-playground",
+    "name": "Animation Playground",
+    "slug": "animation-playground",
+    "description": "An app with a bunch of performant animations built in React Native.",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#424242"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.youssef.animationplayground",
+      "buildNumber": "1.0.0"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "package": "com.youssef.animationplayground",
+      "versionCode": 1
     }
   }
 }
