@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import { deviceHeight } from '../../constants';
+
 import { ITEM_WIDTH } from './Item/styles';
 
 export const Container = styled.View`
@@ -14,7 +16,7 @@ export const CTAButton = styled.TouchableOpacity.attrs({
   width: ${ITEM_WIDTH}px;
   align-self: center;
   position: absolute;
-  bottom: 25px;
+  bottom: ${deviceHeight * 0.05}px;
   padding: 18px 0;
   border-radius: 4px;
 `;

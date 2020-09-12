@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { Animated, View } from 'react-native';
 
-import { deviceWidth } from '../../constants';
+import { deviceHeight, deviceWidth } from '../../constants';
 
 import { Container, CTAButton, CTAText } from './styles';
 import { movies } from './data';
@@ -36,7 +36,7 @@ const MoviesCarousel: React.FC = () => {
 
           const translateY = scrollX.interpolate({
             inputRange,
-            outputRange: [10, -80, 10],
+            outputRange: [10, -deviceHeight * 0.14, 10],
           });
 
           const opacity = scrollX.interpolate({

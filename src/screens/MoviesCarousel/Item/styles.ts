@@ -2,14 +2,14 @@ import styled from 'styled-components/native';
 import { transparentize } from 'polished';
 import { AntDesign } from '@expo/vector-icons';
 
-import { deviceWidth } from '../../../constants';
+import { deviceHeight, deviceWidth } from '../../../constants';
 
 export const ITEM_WIDTH = deviceWidth * 0.7;
 
 export const Container = styled.View`
   background: ${(props) => props.theme.cardBackgroundColor};
   align-self: flex-end;
-  padding: 28px 0 30px 0px;
+  padding: 35px 0 30px 0px;
   border-radius: 35px;
   align-items: center;
   justify-content: flex-start;
@@ -17,8 +17,8 @@ export const Container = styled.View`
 `;
 
 export const MoviePoster = styled.Image`
-  height: 280px;
-  border-radius: 35px;
+  height: ${deviceHeight * 0.4}px;
+  border-radius: 30px;
 `;
 
 export const MovieTitle = styled.Text`

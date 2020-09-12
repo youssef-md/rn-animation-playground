@@ -13,10 +13,10 @@ export const movies: Movie[] = [
     genres: ['Action', 'Adventure', 'Sci-Fi'],
   },
   {
-    title: 'Fight Club',
-    poster: require('../../../assets/poster-fightclub.jpg'),
+    title: 'Interstellar',
+    poster: require('../../../assets/poster-interstellar.jpg'),
     rating: 5,
-    genres: ['Drama', 'Suspense'],
+    genres: ['Drama', 'Suspense', 'Sci-Fi'],
   },
   {
     title: 'Joker',
