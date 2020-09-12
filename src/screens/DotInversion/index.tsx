@@ -36,7 +36,7 @@ const DotInversion: React.FC = () => {
         style={{
           borderRadius: 40,
           transform: [
-            { perspective: 300 },
+            { perspective: 370 },
             {
               rotateY: interpolate(transition, {
                 inputRange: [0, 0.5, 1],

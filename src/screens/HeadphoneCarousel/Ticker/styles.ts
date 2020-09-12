@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const TICKER_HEIGHT = 30;
+export const TICKER_HEIGHT = 40;
 
 export const Container = styled.View`
   position: absolute;
