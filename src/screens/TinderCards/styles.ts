@@ -17,7 +17,7 @@ export const Card = styled.View`
   border-radius: 8px;
   elevation: 6;
   position: absolute;
-  top: 8px;
+  top: ${deviceHeight * 0.02}px;
 `;
 
 export const CardImage = styled.Image`
@@ -33,7 +33,7 @@ export const Footer = styled.View`
   justify-content: space-evenly;
   width: 260px;
   position: absolute;
-  bottom: 4px;
+  top: ${deviceHeight * 0.72}px;
 `;
 
 interface RoundButtonProps {
