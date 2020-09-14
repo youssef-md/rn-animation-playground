@@ -5375,10 +5375,10 @@ react-native-reanimated@~1.9.0:
   dependencies:
     fbjs "^1.0.0"
 
-react-native-redash@^14.2.3:
-  version "14.2.3"
-  resolved "https://registry.yarnpkg.com/react-native-redash/-/react-native-redash-14.2.3.tgz#eaf61e832a7340e7f49fb465423451d0eee7571e"
-  integrity sha512-6EF192RIspcDyDQXd5dYmsm4rc19BBLrtlcJR4gn9jfRMy7Nn/MzEjgkKdVAYvpUmS0JtDxc5dcG5hZaizXL6Q==
+react-native-redash@14.2.2:
+  version "14.2.2"
+  resolved "https://registry.yarnpkg.com/react-native-redash/-/react-native-redash-14.2.2.tgz#199746ed51b895e58132aa4d6796686d228ea298"
+  integrity sha512-LOBfh96sSZxVnW0bK8afwRdOHnrqmVS7XlpcmATNiRVTs2cGYF32F0o89+/nMoNY5Ffo2CAoIV5nnsFteYT+PA==
   dependencies:
     abs-svg-path "^0.1.1"
     normalize-svg-path "^1.0.1"

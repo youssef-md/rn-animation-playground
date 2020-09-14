@@ -5,27 +5,21 @@ import {
   Octicons,
   Ionicons,
   SimpleLineIcons,
-  AntDesign,
 } from '@expo/vector-icons';
 
 import { colors } from './colors';
 
 const defaultIconStyle = { size: 32 };
 
+// Trocar Animated Gallery, Dot Inversion e Skew Scroll, mas deixar o código!
+
 export const sections = [
   {
-    title: 'Animated Gallery',
+    title: 'Animated Accordion',
     color: colors[0],
     githubLink:
-      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedGallery/index.tsx  ',
-    icon: <AntDesign color={colors[0]} name="picture" {...defaultIconStyle} />,
-  },
-  {
-    title: 'Animated Accordion',
-    color: colors[4],
-    githubLink:
       'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedAccordion/index.tsx',
-    icon: <Entypo color={colors[4]} name="list" {...defaultIconStyle} />,
+    icon: <Entypo color={colors[0]} name="list" {...defaultIconStyle} />,
   },
   {
     title: 'Skew Scroll',
@@ -65,31 +59,44 @@ export const sections = [
 
   {
     title: 'Tinder Cards',
-    color: colors[5],
+    color: colors[4],
     githubLink:
       'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/TinderCards/index.tsx',
     icon: (
-      <SimpleLineIcons color={colors[5]} name="fire" {...defaultIconStyle} />
+      <SimpleLineIcons color={colors[4]} name="fire" {...defaultIconStyle} />
     ),
   },
   {
     title: 'Headphone Carousel',
-    color: colors[6],
+    color: colors[5],
     githubLink:
       'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/HeadphoneCarousel/index.tsx',
     icon: (
-      <Ionicons color={colors[6]} name="md-headset" {...defaultIconStyle} />
+      <Ionicons color={colors[5]} name="md-headset" {...defaultIconStyle} />
     ),
   },
   {
     title: 'Movies Carousel',
-    color: colors[7],
+    color: colors[6],
     githubLink:
       'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/MoviesCarousel/index.tsx',
     icon: (
       <MaterialCommunityIcons
-        color={colors[7]}
+        color={colors[6]}
         name="movie-open-outline"
+        {...defaultIconStyle}
+      />
+    ),
+  },
+  {
+    title: 'Path Morphing',
+    color: colors[7],
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedGallery/index.tsx  ',
+    icon: (
+      <MaterialCommunityIcons
+        color={colors[7]}
+        name="svg"
         {...defaultIconStyle}
       />
     ),
