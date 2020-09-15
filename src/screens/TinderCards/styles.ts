@@ -46,7 +46,7 @@ export const RoundButton = styled.TouchableOpacity.attrs({
   width: ${(props) => (props.type === 'small' ? 45 : 60)}px;
   height: ${(props) => (props.type === 'small' ? 45 : 60)}px;
   border-radius: 100px;
-  elevation: 2.2;
+  elevation: 4;
   justify-content: center;
   align-items: center;
   background: ${(props) => props.theme.cardBackgroundColor};

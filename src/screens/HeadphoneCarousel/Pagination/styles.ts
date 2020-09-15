@@ -8,7 +8,7 @@ export const DOT_MARGIN = 18;
 
 export const Container = styled.View`
   position: absolute;
-  bottom: ${deviceHeight * 0.06}px;
+  bottom: ${deviceHeight * 0.08}px;
   right: 20px;
   flex-direction: row;
 `;

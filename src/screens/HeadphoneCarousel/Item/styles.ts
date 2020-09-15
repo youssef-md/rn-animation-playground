@@ -18,7 +18,7 @@ export const ProductImage = styled.Image`
 export const ProductInfo = styled.View`
   width: ${deviceWidth * 0.8}px;
   flex: 1;
-  margin-top: -70px;
+  margin-top: -100px;
 `;
 
 export const Heading = styled.View`
