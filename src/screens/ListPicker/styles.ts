@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 import { deviceHeight, deviceWidth } from '../../constants';
 
-const accentColor = '#a894ff';
+export const accentColor = '#a894ff';
 
 export const Container = styled.View`
   flex: 1;
@@ -19,17 +19,17 @@ export const Heading = styled.Text`
   padding-top: 5px;
   position: absolute;
   top: ${deviceHeight * 0.1}px;
-  left: ${deviceWidth * 0.05}px;
+  left: ${deviceWidth * 0.045}px;
 `;
 
 export const Line = styled.View`
   width: 2px;
-  height: ${deviceHeight * 0.3}px;
+  height: ${deviceHeight * 0.25}px;
   background: ${accentColor};
 
   position: absolute;
-  top: ${deviceHeight * 0.3}px;
-  left: ${deviceWidth * 0.06}px;
+  top: ${deviceHeight * 0.35}px;
+  left: ${deviceWidth * 0.055}px;
 `;
 
 export const FinishButton = styled.TouchableOpacity`
@@ -38,7 +38,7 @@ export const FinishButton = styled.TouchableOpacity`
 
   position: absolute;
   top: ${deviceHeight * 0.6}px;
-  left: ${deviceWidth * 0.06}px;
+  left: ${deviceWidth * 0.055}px;
 `;
 
 export const FinishButtonText = styled.Text`

@@ -1,4 +1,4 @@
-interface Social {
+export interface Social {
   icon: string;
   name: string;
 }
@@ -6,82 +6,66 @@ interface Social {
 export const social: Social[] = [
   {
     icon: 'social-tumblr',
-    name: 'tumblr',
+    name: 'Tumblr',
   },
   {
     icon: 'social-twitter',
-    name: 'twitter',
+    name: 'Twitter',
   },
   {
     icon: 'social-facebook',
-    name: 'facebook',
+    name: 'Facebook',
   },
   {
     icon: 'social-instagram',
-    name: 'instagram',
+    name: 'Instagram',
   },
   {
     icon: 'social-linkedin',
-    name: 'linkedin',
+    name: 'Linkedin',
   },
   {
     icon: 'social-pinterest',
-    name: 'pinterest',
+    name: 'Pinterest',
   },
   {
     icon: 'social-github',
-    name: 'github',
+    name: 'Github',
   },
   {
     icon: 'social-google',
-    name: 'google',
+    name: 'Google',
   },
   {
     icon: 'social-reddit',
-    name: 'reddit',
+    name: 'Reddit',
   },
   {
     icon: 'social-skype',
-    name: 'skype',
+    name: 'Skype',
   },
   {
     icon: 'social-dribbble',
-    name: 'dribbble',
+    name: 'Dribbble',
   },
   {
     icon: 'social-behance',
-    name: 'behance',
-  },
-  {
-    icon: 'social-foursqare',
-    name: 'foursqare',
-  },
-  {
-    icon: 'social-soundcloud',
-    name: 'soundcloud',
+    name: 'Behance',
   },
   {
     icon: 'social-spotify',
-    name: 'spotify',
-  },
-  {
-    icon: 'social-stumbleupon',
-    name: 'stumbleupon',
+    name: 'Spotify',
   },
   {
     icon: 'social-youtube',
-    name: 'youtube',
+    name: 'Youtube',
   },
   {
     icon: 'social-dropbox',
-    name: 'dropbox',
-  },
-  {
-    icon: 'social-vkontakte',
-    name: 'vkontakte',
+    name: 'Dropbox',
   },
   {
     icon: 'social-steam',
-    name: 'steam',
+    name: 'Steam',
   },
 ];
