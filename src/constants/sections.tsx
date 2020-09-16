@@ -5,13 +5,14 @@ import {
   Octicons,
   Ionicons,
   SimpleLineIcons,
+  AntDesign,
 } from '@expo/vector-icons';
 
 import { colors } from './colors';
 
 const defaultIconStyle = { size: 32 };
 
-// Trocar Animated Gallery, Dot Inversion e Skew Scroll, mas deixar o código!
+// Trocar Dot Inversion e Skew Scroll, deixando o código!
 
 export const sections = [
   {
@@ -20,19 +21,6 @@ export const sections = [
     githubLink:
       'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedAccordion/index.tsx',
     icon: <Entypo color={colors[0]} name="list" {...defaultIconStyle} />,
-  },
-  {
-    title: 'Skew Scroll',
-    color: colors[1],
-    githubLink:
-      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/SkewScroll/index.tsx',
-    icon: (
-      <MaterialCommunityIcons
-        color={colors[1]}
-        name="skew-more"
-        {...defaultIconStyle}
-      />
-    ),
   },
   {
     title: 'Animated Wallet',
@@ -67,6 +55,12 @@ export const sections = [
     ),
   },
   {
+    title: 'List Picker',
+    color: colors[1],
+    githubLink: '',
+    icon: <AntDesign color={colors[1]} name="select1" {...defaultIconStyle} />,
+  },
+  {
     title: 'Headphone Carousel',
     color: colors[5],
     githubLink:
@@ -92,7 +86,7 @@ export const sections = [
     title: 'Path Morphing',
     color: colors[7],
     githubLink:
-      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/AnimatedGallery/index.tsx  ',
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/PathMorphing/index.tsx',
     icon: (
       <MaterialCommunityIcons
         color={colors[7]}

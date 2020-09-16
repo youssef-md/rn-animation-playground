@@ -2,7 +2,6 @@
 
 Try out these cool performant animations in your next projects! Check out the examples bellow:
 
-- [Animated Gallery](./src/screens/AnimatedGallery)
 - [Animated Accordion](./src/screens/AnimatedAccordion)
 - [Skew Scroll](./src/screens/SkewScroll)
 - [Animated Wallet](./src/screens/AnimatedWallet)
