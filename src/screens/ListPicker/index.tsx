@@ -1,7 +1,7 @@
 // Inspiration: https://dribbble.com/shots/3431451-HUNGRY
 
-import React, { useRef, useState } from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { Animated, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
 import { deviceHeight, deviceWidth } from '../../constants';
@@ -18,38 +18,63 @@ import {
   accentColor,
 } from './styles';
 
-const List = React.forwardRef(({ showText, isAccent, style }, ref) => (
-  <FlatList
-    ref={ref}
-    data={social}
-    style={style}
-    keyExtractor={({ name }) => name}
-    contentContainerStyle={{
-      paddingTop: showText ? 0 : deviceHeight / 2 - ITEM_HEIGHT / 2 - 100,
-      paddingBottom: showText ? 0 : deviceHeight / 2 - ITEM_HEIGHT / 2,
-      paddingHorizontal: 20,
-    }}
-    renderItem={({ item }) => {
-      return <Item social={item} showText={showText} isAccent={isAccent} />;
-    }}
-  />
-));
+const List = React.memo(
+  React.forwardRef(({ showText, isAccent, style, onScroll }, ref) => (
+    <Animated.FlatList
+      showsVerticalScrollIndicator={false}
+      ref={ref}
+      data={social}
+      style={style}
+      keyExtractor={({ name }) => name}
+      scrollEnabled={!showText}
+      onScroll={onScroll}
+      scrollEventThrottle={16}
+      snapToInterval={ITEM_HEIGHT}
+      decelerationRate="fast"
+      contentContainerStyle={{
+        paddingTop: showText ? 0 : deviceHeight / 2 - ITEM_HEIGHT / 2 - 100,
+        paddingBottom: showText ? 0 : deviceHeight / 2 - ITEM_HEIGHT / 2 + 15,
+        paddingHorizontal: 20,
+      }}
+      renderItem={({ item }) => {
+        return <Item social={item} showText={showText} isAccent={isAccent} />;
+      }}
+    />
+  )),
+);
 
 const ListPicker: React.FC = () => {
-  const [index, setIndex] = useState(0);
-
   const accentRef = useRef();
   const darkRef = useRef();
 
-  function handleDone() {
-    alert(`Connect with: ${social[index].name.toUpperCase()}`);
-  }
+  const scrollY = React.useRef(new Animated.Value(0)).current;
+
+  const onScroll = Animated.event(
+    [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+    { useNativeDriver: true },
+  );
+
+  useEffect(() => {
+    scrollY.addListener((v) => {
+      if (darkRef.current) {
+        darkRef.current.scrollToOffset({
+          offset: v.value,
+          animated: false,
+        });
+      }
+    });
+  }, [scrollY]);
 
   return (
     <Container>
-      {/* <Heading>Connect with...</Heading> */}
+      <Heading>Connect with...</Heading>
 
-      <List ref={accentRef} isAccent style={StyleSheet.absoluteFillObject} />
+      <List
+        ref={accentRef}
+        isAccent
+        style={StyleSheet.absoluteFillObject}
+        onScroll={onScroll}
+      />
 
       <List
         ref={darkRef}
@@ -63,10 +88,10 @@ const ListPicker: React.FC = () => {
         }}
       />
 
-      {/* <Line />
-      <FinishButton activeOpacity={0.8} onPress={handleDone}>
+      <Line />
+      <FinishButton activeOpacity={0.8}>
         <FinishButtonText>Done !</FinishButtonText>
-      </FinishButton> */}
+      </FinishButton>
     </Container>
   );
 };

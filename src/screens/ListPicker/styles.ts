@@ -24,11 +24,11 @@ export const Heading = styled.Text`
 
 export const Line = styled.View`
   width: 2px;
-  height: ${deviceHeight * 0.25}px;
+  height: ${deviceHeight * 0.2}px;
   background: ${accentColor};
 
   position: absolute;
-  top: ${deviceHeight * 0.35}px;
+  top: ${deviceHeight * 0.4}px;
   left: ${deviceWidth * 0.055}px;
 `;
 

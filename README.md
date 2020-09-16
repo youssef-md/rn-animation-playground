@@ -7,6 +7,7 @@ Try out these cool performant animations in your next projects! Check out the ex
 - [Animated Wallet](./src/screens/AnimatedWallet)
 - [Dot Inversion](./src/screens/DotInversion)
 - [Tinder Cards](./src/screens/TinderCards)
+- [List Picker](./src/screens/ListPicker)
 - [Headphone Carousel](./src/screens/HeadphoneCarousel)
 - [Movies Carousel](./src/screens/MoviesCarousel)
 - [Path Morphing](./src/screens/PathMorphing)
