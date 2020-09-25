@@ -36,16 +36,6 @@ export const sections = [
     ),
   },
   {
-    title: 'Dot Inversion',
-    color: colors[3],
-    githubLink:
-      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/DotInversion/index.tsx',
-    icon: (
-      <Octicons color={colors[3]} name="primitive-dot" {...defaultIconStyle} />
-    ),
-  },
-
-  {
     title: 'Tinder Cards',
     color: colors[4],
     githubLink:
@@ -55,10 +45,16 @@ export const sections = [
     ),
   },
   {
-    title: 'List Picker',
+    title: 'Shared Transition',
     color: colors[1],
     githubLink: '',
-    icon: <AntDesign color={colors[1]} name="select1" {...defaultIconStyle} />,
+    icon: (
+      <MaterialCommunityIcons
+        color={colors[1]}
+        name="cards"
+        {...defaultIconStyle}
+      />
+    ),
   },
   {
     title: 'Headphone Carousel',
@@ -95,4 +91,35 @@ export const sections = [
       />
     ),
   },
+
+  // Buggy behavior
+  // {
+  //   title: 'Skew Scroll',
+  //   color: colors[1],
+  //   githubLink:
+  //     'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/SkewScroll/index.tsx',
+  //   icon: (
+  //     <MaterialCommunityIcons
+  //       color={colors[1]}
+  //       name="skew-more"
+  //       {...defaultIconStyle}
+  //     />
+  //   ),
+  // },
+  // {
+  //   title: 'List Picker',
+  //   color: colors[1],
+  //   githubLink:
+  //     'https://github.com/youssef-md/rn-animation-playground/tree/master/src/screens/ListPicker',
+  //   icon: <AntDesign color={colors[1]} name="select1" {...defaultIconStyle} />,
+  // },
+  // {
+  //   title: 'Dot Inversion',
+  //   color: colors[3],
+  //   githubLink:
+  //     'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/DotInversion/index.tsx',
+  //   icon: (
+  //     <Octicons color={colors[3]} name="primitive-dot" {...defaultIconStyle} />
+  //   ),
+  // },
 ];
