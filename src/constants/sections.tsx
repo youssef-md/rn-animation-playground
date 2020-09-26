@@ -45,18 +45,6 @@ export const sections = [
     ),
   },
   {
-    title: 'Shared Transition',
-    color: colors[1],
-    githubLink: '',
-    icon: (
-      <MaterialCommunityIcons
-        color={colors[1]}
-        name="cards"
-        {...defaultIconStyle}
-      />
-    ),
-  },
-  {
     title: 'Headphone Carousel',
     color: colors[5],
     githubLink:
@@ -74,6 +62,18 @@ export const sections = [
       <MaterialCommunityIcons
         color={colors[6]}
         name="movie-open-outline"
+        {...defaultIconStyle}
+      />
+    ),
+  },
+  {
+    title: 'Shared Transition',
+    color: colors[1],
+    githubLink: '',
+    icon: (
+      <MaterialCommunityIcons
+        color={colors[1]}
+        name="cards"
         {...defaultIconStyle}
       />
     ),
