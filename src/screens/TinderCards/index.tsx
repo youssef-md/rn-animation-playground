@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import { Animated, PanResponder } from 'react-native';
 
@@ -27,6 +27,12 @@ const ACTION_OFFSET_VERTICAL = 120;
 const TinderCards: React.FC = () => {
   const swipe = useRef(new Animated.ValueXY()).current;
   const [items, setItems] = useState(movies);
+
+  useEffect(() => {
+    if (!items.length) {
+      setItems(movies);
+    }
+  }, [items]);
 
   const panResponder = useRef(
     PanResponder.create({
