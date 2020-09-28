@@ -46,11 +46,7 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
       <App.Screen name="Headphone Carousel" component={HeadphoneCarousel} />
       <App.Screen name="Movies Carousel" component={MoviesCarousel} />
       <App.Screen name="Shared Transition" component={SharedTransition} />
-      <App.Screen
-        name="Shared Transition Detail"
-        component={DetailScreen}
-        options={{ headerShown: false }}
-      />
+      <App.Screen name="Shared Transition Detail" component={DetailScreen} />
       <App.Screen name="Path Morphing" component={PathMorphing} />
 
       {/* Buggy Behavior */}
