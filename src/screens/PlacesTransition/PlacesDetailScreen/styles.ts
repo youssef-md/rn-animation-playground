@@ -39,15 +39,15 @@ export const User = styled.Image`
   border-color: #101010;
 `;
 
-export const MovieInfo = styled.View``;
+export const PlaceInfo = styled.View``;
 
-export const MovieInfoTitle = styled.Text`
+export const PlaceInfoTitle = styled.Text`
   font-size: 16px;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 5px;
 `;
 
-export const MovieInfoValue = styled.Text`
+export const PlaceInfoValue = styled.Text`
   font-size: 32px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: bold;

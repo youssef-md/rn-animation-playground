@@ -10,8 +10,8 @@ import MoviesCarousel from '../screens/MoviesCarousel';
 import TinderCards from '../screens/TinderCards';
 import WebView from '../screens/WebView';
 import PathMorphing from '../screens/PathMorphing';
-import SharedTransition from '../screens/SharedTransition';
-import DetailScreen from '../screens/SharedTransition/DetailScreen';
+import PlacesTransition from '../screens/PlacesTransition';
+import PlacesDetailScreen from '../screens/PlacesTransition/PlacesDetailScreen';
 
 // Commented examples due to buggy behavior
 // import SkewScroll from '../screens/SkewScroll';
@@ -45,8 +45,11 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
       <App.Screen name="Tinder Cards" component={TinderCards} />
       <App.Screen name="Headphone Carousel" component={HeadphoneCarousel} />
       <App.Screen name="Movies Carousel" component={MoviesCarousel} />
-      <App.Screen name="Shared Transition" component={SharedTransition} />
-      <App.Screen name="Shared Transition Detail" component={DetailScreen} />
+      <App.Screen name="Places Transition" component={PlacesTransition} />
+      <App.Screen
+        name="Places Transition Detail"
+        component={PlacesDetailScreen}
+      />
       <App.Screen name="Path Morphing" component={PathMorphing} />
 
       {/* Buggy Behavior */}

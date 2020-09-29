@@ -2,10 +2,9 @@ import React from 'react';
 import {
   MaterialCommunityIcons,
   Entypo,
-  Octicons,
   Ionicons,
   SimpleLineIcons,
-  AntDesign,
+  MaterialIcons,
 } from '@expo/vector-icons';
 
 import { colors } from './colors';
@@ -67,15 +66,11 @@ export const sections = [
     ),
   },
   {
-    title: 'Shared Transition',
+    title: 'Places Transition',
     color: colors[1],
     githubLink: '',
     icon: (
-      <MaterialCommunityIcons
-        color={colors[1]}
-        name="cards"
-        {...defaultIconStyle}
-      />
+      <MaterialIcons color={colors[1]} name="place" {...defaultIconStyle} />
     ),
   },
   {

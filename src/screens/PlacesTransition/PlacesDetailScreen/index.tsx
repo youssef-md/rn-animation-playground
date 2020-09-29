@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { avatars, movies } from '../data';
+import { avatars, places } from '../data';
 
 import {
   Container,
@@ -9,14 +9,14 @@ import {
   User,
   UsersInfo,
   UsersInfoTitle,
-  MovieInfo,
-  MovieInfoTitle,
-  MovieInfoValue,
+  PlaceInfo,
+  PlaceInfoTitle,
+  PlaceInfoValue,
 } from './styles';
 
-const selectedMovie = movies[0];
+const selectedPlace = places[0];
 
-const DetailScreen: React.FC = () => {
+const PlacesDetailScreen: React.FC = () => {
   return (
     <Container>
       <Footer>
@@ -36,18 +36,18 @@ const DetailScreen: React.FC = () => {
           </Users>
         </UsersInfo>
 
-        <MovieInfo>
-          <MovieInfoTitle>Duration</MovieInfoTitle>
-          <MovieInfoValue>{selectedMovie.duration}</MovieInfoValue>
-        </MovieInfo>
+        <PlaceInfo>
+          <PlaceInfoTitle>Duration</PlaceInfoTitle>
+          <PlaceInfoValue>{selectedPlace.duration}</PlaceInfoValue>
+        </PlaceInfo>
 
-        <MovieInfo>
-          <MovieInfoTitle>Rating</MovieInfoTitle>
-          <MovieInfoValue>{selectedMovie.rating}</MovieInfoValue>
-        </MovieInfo>
+        <PlaceInfo>
+          <PlaceInfoTitle>Rating</PlaceInfoTitle>
+          <PlaceInfoValue>{selectedPlace.rating}</PlaceInfoValue>
+        </PlaceInfo>
       </Footer>
     </Container>
   );
 };
 
-export default DetailScreen;
+export default PlacesDetailScreen;
