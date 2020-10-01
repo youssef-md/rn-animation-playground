@@ -98,10 +98,18 @@ const SharedTransition: React.FC = () => {
                 </View>
               );
             }}
-            renderItem={({ item }) => {
+            renderItem={({ item, index }) => {
+              const inputRange = [index - 1, index, index + 1];
+              const translateY = animatedValue.interpolate({
+                inputRange,
+                outputRange: [-30, 0, 30],
+              });
+
               const { poster, name } = item;
               return (
-                <PlaceContainer>
+                <PlaceContainer
+                  as={Animated.View}
+                  style={{ transform: [{ translateY }] }}>
                   <TouchableOpacity>
                     <PlaceImage source={poster} resizeMode="cover" />
                     <PlaceName>{name}</PlaceName>
