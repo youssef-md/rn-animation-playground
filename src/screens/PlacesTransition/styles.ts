@@ -12,6 +12,8 @@ export const Container = styled.View`
 
 export const PlaceContainer = styled.View`
   position: absolute;
+  left: ${-ITEM_WIDTH / 2}px;
+  top: ${-ITEM_HEIGHT / 2 - 20}px;
 `;
 
 export const PlaceImage = styled.Image`
