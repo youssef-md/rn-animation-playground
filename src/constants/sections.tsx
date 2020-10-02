@@ -2,9 +2,9 @@ import React from 'react';
 import {
   MaterialCommunityIcons,
   Entypo,
-  Ionicons,
   SimpleLineIcons,
   MaterialIcons,
+  Feather,
 } from '@expo/vector-icons';
 
 import { colors } from './colors';
@@ -48,9 +48,7 @@ export const sections = [
     color: colors[5],
     githubLink:
       'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/HeadphoneCarousel/index.tsx',
-    icon: (
-      <Ionicons color={colors[5]} name="md-headset" {...defaultIconStyle} />
-    ),
+    icon: <Feather color={colors[5]} name="headphones" {...defaultIconStyle} />,
   },
   {
     title: 'Movies Carousel',
@@ -69,9 +67,7 @@ export const sections = [
     title: 'Places Transition',
     color: colors[1],
     githubLink: '',
-    icon: (
-      <MaterialIcons color={colors[1]} name="place" {...defaultIconStyle} />
-    ),
+    icon: <Feather color={colors[1]} name="map-pin" {...defaultIconStyle} />,
   },
   {
     title: 'Path Morphing',
@@ -79,11 +75,7 @@ export const sections = [
     githubLink:
       'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/PathMorphing/index.tsx',
     icon: (
-      <MaterialCommunityIcons
-        color={colors[7]}
-        name="svg"
-        {...defaultIconStyle}
-      />
+      <MaterialIcons color={colors[7]} name="gesture" {...defaultIconStyle} />
     ),
   },
 
