@@ -11,11 +11,10 @@ import {
 
 import {
   Container,
-  ITEM_HEIGHT,
-  ITEM_WIDTH,
   PlaceContainer,
   PlaceImage,
   PlaceName,
+  Gradient,
 } from './styles';
 import { places } from './data';
 
@@ -113,6 +112,7 @@ const SharedTransition: React.FC = () => {
                     zIndex: places.length - index,
                   }}>
                   <PlaceImage source={poster} resizeMode="cover" />
+                  <Gradient />
                   <PlaceName>{name}</PlaceName>
                 </PlaceContainer>
               );
