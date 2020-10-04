@@ -2,12 +2,18 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity, FlatList, View, Animated } from 'react-native';
+import {
+  TouchableWithoutFeedback,
+  FlatList,
+  View,
+  Animated,
+} from 'react-native';
 import {
   Directions,
   FlingGestureHandler,
   State,
 } from 'react-native-gesture-handler';
+import { SharedElement } from 'react-navigation-shared-element';
 
 import {
   Container,
@@ -21,9 +27,7 @@ import { places } from './data';
 // navigation.navigate('Shared Transition Detail')
 const VISIBLE_ITEMS = 4;
 
-const SharedTransition: React.FC = () => {
-  const navigation = useNavigation();
-
+const SharedTransition: React.FC = ({ navigation }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const animatedValue = useRef(new Animated.Value(0)).current;
   const reactiveAnimated = useRef(new Animated.Value(0)).current;
@@ -31,7 +35,7 @@ const SharedTransition: React.FC = () => {
   useEffect(() => {
     Animated.timing(animatedValue, {
       toValue: reactiveAnimated,
-      duration: 300,
+      duration: 280,
       useNativeDriver: true,
     }).start();
   }, [animatedValue, reactiveAnimated]);
@@ -98,23 +102,35 @@ const SharedTransition: React.FC = () => {
 
               const scale = animatedValue.interpolate({
                 inputRange,
-                outputRange: [0.92, 1, 1.2],
+                outputRange: [0.9, 1, 1.1],
               });
 
               const { poster, name } = item;
               return (
-                <PlaceContainer
-                  as={Animated.View}
-                  style={{
-                    transform: [{ translateY }, { scale }],
-                    opacity,
-                    elevation: places.length - index,
-                    zIndex: places.length - index,
-                  }}>
-                  <PlaceImage source={poster} resizeMode="cover" />
-                  <Gradient />
-                  <PlaceName>{name}</PlaceName>
-                </PlaceContainer>
+                <TouchableWithoutFeedback
+                  // activeOpacity={1}
+                  onPress={() =>
+                    navigation.navigate('Places Transition Detail', { item })
+                  }>
+                  <PlaceContainer
+                    as={Animated.View}
+                    style={{
+                      transform: [{ translateY }, { scale }],
+                      opacity,
+                      elevation: places.length - index,
+                      zIndex: places.length - index,
+                    }}>
+                    <SharedElement id={`item.${name}.image`}>
+                      <PlaceImage source={poster} resizeMode="cover" />
+                    </SharedElement>
+
+                    <Gradient />
+
+                    <SharedElement id={`item.${name}.name`}>
+                      <PlaceName>{name}</PlaceName>
+                    </SharedElement>
+                  </PlaceContainer>
+                </TouchableWithoutFeedback>
               );
             }}
           />

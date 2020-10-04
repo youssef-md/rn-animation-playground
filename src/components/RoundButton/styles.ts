@@ -1,9 +1,8 @@
 import styled from 'styled-components/native';
 import { transparentize } from 'polished';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export const Touch = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.5,
-})``;
+export const Touch = styled(TouchableOpacity)``;
 
 export const Container = styled.View`
   width: 44px;

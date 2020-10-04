@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ routeName, switchTheme, goBack }) => {
   const isInSharedDetailScreen = routeName.includes('Detail');
 
   return (
-    <Container>
+    <Container hideBackground={isInSharedDetailScreen}>
       {routeName !== 'Animation Playground' && (
         <BackArrowContainer>
           <RoundButton icon="md-arrow-round-back" onPress={goBack} />

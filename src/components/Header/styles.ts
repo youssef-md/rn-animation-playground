@@ -1,12 +1,24 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { StatusBar } from 'react-native';
 
-export const Container = styled.View`
+interface ContainerProps {
+  hideBackground: boolean;
+}
+
+const hideBackground = css`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: transparent;
+`;
+
+export const Container = styled.View<ContainerProps>`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: ${(StatusBar?.currentHeight ?? 24) + 8}px 16px 10px 16px;
   background: ${(props) => props.theme.backgroundColor};
+  ${(props) => props.hideBackground && hideBackground}
   border-bottom-color: ${(props) => props.theme.detailColor};
 `;
 
