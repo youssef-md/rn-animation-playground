@@ -1,5 +1,6 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import { enableScreens } from 'react-native-screens';
 
 import Header from '../components/Header';
 import Home from '../screens/Home';
@@ -22,7 +23,8 @@ interface AppRoutesProps {
   switchTheme: () => void;
 }
 
-const App = createStackNavigator();
+enableScreens();
+const App = createSharedElementStackNavigator();
 
 const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
   return (
@@ -48,6 +50,7 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ switchTheme }) => {
       <App.Screen name="Places Transition" component={PlacesTransition} />
       <App.Screen
         name="Places Transition Detail"
+        options={{ headerShown: false }}
         component={PlacesDetailScreen}
       />
       <App.Screen name="Path Morphing" component={PathMorphing} />
