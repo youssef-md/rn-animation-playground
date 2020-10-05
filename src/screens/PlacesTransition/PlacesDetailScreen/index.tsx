@@ -1,9 +1,13 @@
 import React from 'react';
+import { SharedElement } from 'react-navigation-shared-element';
 
-import { avatars, places } from '../data';
+import { avatars } from '../data';
 
 import {
   Container,
+  FullPlaceImage,
+  PlaceName,
+  Gradient,
   Footer,
   Users,
   User,
@@ -14,11 +18,20 @@ import {
   PlaceInfoValue,
 } from './styles';
 
-const selectedPlace = places[0];
+const PlacesDetailScreen: React.FC = ({ route }) => {
+  const {
+    item: { name, poster, duration, rating },
+  } = route.params;
 
-const PlacesDetailScreen: React.FC = () => {
   return (
     <Container>
+      <SharedElement id={`item.${name}.image`}>
+        <FullPlaceImage source={poster} resizeMode="cover" />
+      </SharedElement>
+      <Gradient />
+
+      <PlaceName>{name}</PlaceName>
+
       <Footer>
         <UsersInfo>
           <UsersInfoTitle>Reviews</UsersInfoTitle>
@@ -38,16 +51,31 @@ const PlacesDetailScreen: React.FC = () => {
 
         <PlaceInfo>
           <PlaceInfoTitle>Duration</PlaceInfoTitle>
-          <PlaceInfoValue>{selectedPlace.duration}</PlaceInfoValue>
+          <PlaceInfoValue>{duration}</PlaceInfoValue>
         </PlaceInfo>
 
         <PlaceInfo>
           <PlaceInfoTitle>Rating</PlaceInfoTitle>
-          <PlaceInfoValue>{selectedPlace.rating}</PlaceInfoValue>
+          <PlaceInfoValue>{rating}</PlaceInfoValue>
         </PlaceInfo>
       </Footer>
     </Container>
   );
+};
+
+PlacesDetailScreen.sharedElements = (route, otherRoute, showing) => {
+  const {
+    item: { name },
+  } = route.params;
+
+  return [
+    {
+      id: `item.${name}.image`,
+    },
+    {
+      id: `item.${name}.name`,
+    },
+  ];
 };
 
 export default PlacesDetailScreen;

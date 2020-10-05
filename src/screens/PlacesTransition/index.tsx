@@ -1,7 +1,6 @@
 // Inspiration: https://dribbble.com/shots/3731362-Event-cards-iOS-interaction
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import {
   TouchableWithoutFeedback,
   FlatList,
@@ -110,7 +109,9 @@ const SharedTransition: React.FC = ({ navigation }) => {
                 <TouchableWithoutFeedback
                   // activeOpacity={1}
                   onPress={() =>
-                    navigation.navigate('Places Transition Detail', { item })
+                    navigation.navigate('Places Transition Detail', {
+                      item: places[activeIndex],
+                    })
                   }>
                   <PlaceContainer
                     as={Animated.View}

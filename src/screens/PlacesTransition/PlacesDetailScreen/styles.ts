@@ -1,3 +1,4 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 
 import { deviceHeight } from '../../../constants';
@@ -5,6 +6,31 @@ import { deviceHeight } from '../../../constants';
 export const Container = styled.View`
   flex: 1;
   background: ${(props) => props.theme.backgroundColor};
+`;
+
+export const FullPlaceImage = styled.Image`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+`;
+
+export const PlaceName = styled.Text`
+  font-size: 45px;
+  position: absolute;
+  font-weight: bold;
+  bottom: ${deviceHeight * 0.18}px;
+  left: 20px;
+  color: white;
+  text-transform: uppercase;
+`;
+
+export const Gradient = styled(LinearGradient).attrs({
+  colors: ['transparent', 'rgba(0, 0, 0, 0.9)'],
+})`
+  position: absolute;
+  width: 100%;
+  bottom: ${0};
+  height: ${deviceHeight * 0.45}px;
 `;
 
 export const Footer = styled.View`
@@ -15,8 +41,7 @@ export const Footer = styled.View`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: ${deviceHeight * 0.25}px;
-  background: #101010;
+  height: ${deviceHeight * 0.2}px;
 `;
 
 export const Users = styled.View`

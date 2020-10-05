@@ -27,7 +27,7 @@ export const PlaceName = styled.Text`
   position: absolute;
   bottom: 25px;
   left: 25px;
-  font-size: 38px;
+  font-size: 32px;
   text-transform: uppercase;
   font-weight: bold;
   color: white;
