@@ -66,7 +66,8 @@ export const sections = [
   {
     title: 'Places Transition',
     color: colors[1],
-    githubLink: '',
+    githubLink:
+      'https://github.com/youssef-md/rn-animation-playground/blob/master/src/screens/PlacesTransition/index.tsx',
     icon: <Feather color={colors[1]} name="map-pin" {...defaultIconStyle} />,
   },
   {

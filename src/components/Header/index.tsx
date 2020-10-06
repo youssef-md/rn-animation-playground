@@ -24,24 +24,24 @@ const Header: React.FC<HeaderProps> = ({ routeName, switchTheme, goBack }) => {
 
   return (
     <Container>
-      <BackArrowContainer>
-        <RoundButton icon="md-arrow-round-back" onPress={goBack} />
-      </BackArrowContainer>
+      {routeName !== 'Animation Playground' && (
+        <BackArrowContainer>
+          <RoundButton icon="md-arrow-round-back" onPress={goBack} />
+        </BackArrowContainer>
+      )}
 
-      <>
-        <HeaderTitle>{routeName}</HeaderTitle>
-        <RightItems>
-          <RoundButton
-            icon={type === 'dark' ? 'ios-sunny' : 'ios-moon'}
-            onPress={switchTheme}
-          />
-          <Separator />
-          <RoundButton
-            icon="logo-github"
-            onPress={() => navigation.navigate('GitHub')}
-          />
-        </RightItems>
-      </>
+      <HeaderTitle>{routeName}</HeaderTitle>
+      <RightItems>
+        <RoundButton
+          icon={type === 'dark' ? 'ios-sunny' : 'ios-moon'}
+          onPress={switchTheme}
+        />
+        <Separator />
+        <RoundButton
+          icon="logo-github"
+          onPress={() => navigation.navigate('GitHub')}
+        />
+      </RightItems>
     </Container>
   );
 };

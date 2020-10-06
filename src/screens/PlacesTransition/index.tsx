@@ -19,7 +19,8 @@ import {
   PlaceContainer,
   PlaceImage,
   PlaceName,
-  Gradient,
+  ITEM_WIDTH,
+  ITEM_HEIGHT,
 } from './styles';
 import { places } from './data';
 
@@ -84,7 +85,11 @@ const SharedTransition: React.FC = ({ navigation }) => {
               style,
               ...props
             }) => {
-              return <View style={style}>{children}</View>;
+              return (
+                <View style={style} {...props}>
+                  {children}
+                </View>
+              );
             }}
             renderItem={({ item, index }) => {
               const inputRange = [index - 1, index, index + 1];
@@ -121,14 +126,25 @@ const SharedTransition: React.FC = ({ navigation }) => {
                       elevation: places.length - index,
                       zIndex: places.length - index,
                     }}>
-                    <SharedElement id={`item.${name}.image`}>
+                    <SharedElement
+                      id={`item.${name}.image`}
+                      style={{
+                        width: ITEM_WIDTH,
+                        height: ITEM_HEIGHT,
+                        borderRadius: 20,
+                      }}>
                       <PlaceImage source={poster} resizeMode="cover" />
                     </SharedElement>
 
-                    <Gradient />
-
                     <SharedElement id={`item.${name}.name`}>
-                      <PlaceName>{name}</PlaceName>
+                      <PlaceName
+                        style={{
+                          textShadowColor: '#000',
+                          textShadowOffset: { width: 0, height: 3 },
+                          textShadowRadius: 15,
+                        }}>
+                        {name}
+                      </PlaceName>
                     </SharedElement>
                   </PlaceContainer>
                 </TouchableWithoutFeedback>

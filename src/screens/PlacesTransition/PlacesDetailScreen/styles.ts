@@ -15,7 +15,7 @@ export const FullPlaceImage = styled.Image`
 `;
 
 export const PlaceName = styled.Text`
-  font-size: 45px;
+  font-size: 42px;
   position: absolute;
   font-weight: bold;
   bottom: ${deviceHeight * 0.18}px;
@@ -25,12 +25,12 @@ export const PlaceName = styled.Text`
 `;
 
 export const Gradient = styled(LinearGradient).attrs({
-  colors: ['transparent', 'rgba(0, 0, 0, 0.9)'],
+  colors: ['transparent', '#000'],
 })`
   position: absolute;
   width: 100%;
-  bottom: ${0};
-  height: ${deviceHeight * 0.45}px;
+  bottom: 0;
+  height: ${deviceHeight * 0.48}px;
 `;
 
 export const Footer = styled.View`
@@ -50,12 +50,6 @@ export const Users = styled.View`
 
 export const UsersInfo = styled.View``;
 
-export const UsersInfoTitle = styled.Text`
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 5px;
-`;
-
 export const User = styled.Image`
   width: 42px;
   height: 42px;
@@ -68,7 +62,7 @@ export const PlaceInfo = styled.View``;
 
 export const PlaceInfoTitle = styled.Text`
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 5px;
 `;
 

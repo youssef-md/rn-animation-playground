@@ -10,6 +10,7 @@ Try out these cool performant animations in your next projects! Check out the ex
 - [List Picker](./src/screens/ListPicker)
 - [Headphone Carousel](./src/screens/HeadphoneCarousel)
 - [Movies Carousel](./src/screens/MoviesCarousel)
+- [Places Transition](./src/screens/PlacesTransition)
 - [Path Morphing](./src/screens/PathMorphing)
 
 :heart: _Special thanks to [William Candillon](https://github.com/wcandillon) and [Catalin Miron](https://github.com/catalinmiron)_.
